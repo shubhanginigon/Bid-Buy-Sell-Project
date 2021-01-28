@@ -13,7 +13,7 @@ It's idea is like any e-commerce platform in which buying and selling of goods a
 In case of AIT, this platform can be used to sell the used items. More than one person could be interested in the same product, but with this system, there will be a sense of competition as one person bids over another user’s bid at the same time and the product value will also increase.
 
 #### _**Context Diagram**_
-![](/image_file/2.png)
+![](2.png)
 
 #### _**Architecture:**_
 Will update soon
@@ -24,7 +24,7 @@ Will update soon
 
 
 #### _**Quality attribute analysis:**_
-![](/image_file/1.png)
+![](1.png)
 
 
 #### _**Responsibility of team member and modules**_
