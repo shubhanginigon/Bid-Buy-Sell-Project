@@ -24,7 +24,7 @@ Will update soon
 
 
 #### _**Quality attribute analysis:**_
-![alt](1.PNG)
+![alt](3.PNG)
 
 
 #### _**Responsibility of team member and modules**_
