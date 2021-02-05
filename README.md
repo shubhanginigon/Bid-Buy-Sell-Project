@@ -41,7 +41,7 @@ Security of the bidding system and keeping track of the seller and buyer with pr
 >Team member will be splitting the modules as per the architectural patterns implementation and since all the members are in campus, we are planning to work together.
 
 #### _**Meeting schedule**_
-* Every Wednesday – 1:00 PM to 3:00 PM 
+* Every Wednesday – 8:00 PM to 10:30 PM  
   - Progress and issues meeting
-* Every Saturday or Sunday – 12:30 PM to 5:00 PM 
+* Every Sunday – 6:00 PM to 10:30 PM  
   - Pair programming
