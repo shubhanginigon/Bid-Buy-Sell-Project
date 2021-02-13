@@ -17,7 +17,6 @@ import lombok.Data;
 @Entity
 @Builder
 @Data
-
 public class User {
 
     public enum Gender {
@@ -36,7 +35,7 @@ public class User {
     private Gender gender;
 
     @NotBlank(message = "This field is required.")
-    @Email(message = "Email should be valid")
+    @Email(message = "Email should be valid.")
     private String email;
 
     @NotBlank(message = "This field is required.")

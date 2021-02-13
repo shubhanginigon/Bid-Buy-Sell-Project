@@ -23,8 +23,9 @@ public class Bid {
     private int userId;
 
     @Column(nullable = false)
-    @NotBlank(message = "Enter the bid value")
-    private double bidPrice;
+    @NotBlank(message = "Enter the bid value.")
+    private double price;
 
-    private String Status;
+    private String status;
+
 }
