@@ -1,0 +1,1 @@
+This folder contains all the views / front-end files like `jsp`, `css`, `js` 
