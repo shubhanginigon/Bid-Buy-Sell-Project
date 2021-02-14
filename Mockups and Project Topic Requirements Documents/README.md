@@ -1,5 +1,8 @@
 ># _This is considered the first official phase of the SAD project._
 
+#### _**Use Case Diagram**_
+![alt](Image/Use_Case_Diagram.png)
+
 ## Deliverables:
 
 1. **UI Mockups** 
