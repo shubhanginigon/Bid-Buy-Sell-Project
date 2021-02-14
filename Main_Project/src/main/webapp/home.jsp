@@ -15,13 +15,14 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
-        <div class="container"><a class="navbar-brand" href="#">AIT - Bid Buy Sell</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand" href="/home">AIT - Bid Buy Sell</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Rules</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Rules</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Tutorials</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
-                </ul><span class="navbar-text actions"> <a class="login" href="#">Log In</a><a class="btn btn-light action-button" role="button" href="#">Register</a></span>
+                </ul><span class="navbar-text actions"> <a class="login" href="/login">Log In</a><a class="btn btn-light action-button" role="button" href="/register">Register</a></span>
             </div>
         </div>
     </nav>

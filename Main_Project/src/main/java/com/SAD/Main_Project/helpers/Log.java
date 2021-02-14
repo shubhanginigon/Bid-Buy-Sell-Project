@@ -17,7 +17,6 @@ public class Log {
         return shared;
     }
 
-
     // Printing Methods
     public void print(String text) {
         System.out.println(text);

@@ -1,18 +1,16 @@
 package com.SAD.Main_Project.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.Set;
+
 @Entity
-@Builder
 @Data
+@Table(name = "role")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,5 +19,8 @@ public class Role {
     @Column(nullable = false)
     @NotBlank(message = "This field is required.")
     private String name;
+
+    @OneToMany(mappedBy = "role")
+    private Set<User> users;
 
 }
