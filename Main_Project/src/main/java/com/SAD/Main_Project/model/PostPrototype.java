@@ -8,14 +8,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope("prototype")
-public class PostSpringPrototype {
+public class PostPrototype {
 	private List<String> postList;
 	
-	public PostSpringPrototype() {
+	public PostPrototype() {
 		postList = new ArrayList<String>();
 	}
 	
-	public PostSpringPrototype(List<String> list) {
+	public PostPrototype(List<String> list) {
 		this.postList=list;
 	}
 	
