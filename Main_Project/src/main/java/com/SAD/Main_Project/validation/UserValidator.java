@@ -1,11 +1,13 @@
 package com.SAD.Main_Project.validation;
 
-import com.SAD.Main_Project.model.User;
-import com.SAD.Main_Project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
+
+import com.SAD.Main_Project.model.User;
+import com.SAD.Main_Project.service.UserService;
 
 @Component
 public class UserValidator implements Validator {
@@ -18,14 +20,20 @@ public class UserValidator implements Validator {
         return User.class.equals(clazz);
     }
 
-    // Add validation logics
     @Override
     public void validate(Object target, Errors errors) {
         User user = (User) target;
 
+        // Add validation logic
+
         // Rejects if user email already exists
         if (userService.findByEmail(user.getEmail()) != null) {
-            errors.rejectValue("email", "duplicate.user.email'");
+            errors.rejectValue("email", "duplicate.user.email");
+        }
+
+        // Rejects if length of user name is less than 3 and more than 32
+        if (user.getName().length() < 3 || user.getName().length() > 32) {
+            errors.rejectValue("name", "size.user.name");
         }
 
         // Rejects if length of password is less than 8 and more than 32
@@ -37,6 +45,6 @@ public class UserValidator implements Validator {
         if (!user.getConfirmPassword().equals(user.getPassword())) {
             errors.rejectValue("confirmPassword", "diff.user.confirmPassword");
         }
-
     }
+
 }
