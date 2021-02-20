@@ -85,5 +85,9 @@ public class UserController {
     public String login() {
         return "login.jsp";
     }
-
+    
+    @RequestMapping(path = "/logout-success")
+	public String logout() {
+		return "logout.jsp";
+    }
 }
