@@ -35,7 +35,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable() // disable so that h2 works
                 .authorizeRequests()
-                    .antMatchers("/h2-console/**", "/login", "/register", "/home").permitAll()
+                    //.antMatchers("/h2-console/**", "/login", "/register", "/home").permitAll()
+                    .antMatchers("/login", "/register", "/home").permitAll()
                     .antMatchers("/admin/**").hasRole("ADMIN")
                     .antMatchers("/bid/**").hasRole("USER")
                     .antMatchers("/**").permitAll()
@@ -51,6 +52,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .logoutSuccessUrl("/logout-success").permitAll();
 
         // To make h2 frame visible
-        http.headers().frameOptions().disable();
+        //http.headers().frameOptions().disable();
     }
 }
