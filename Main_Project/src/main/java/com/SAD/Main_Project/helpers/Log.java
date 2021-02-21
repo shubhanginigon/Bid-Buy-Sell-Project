@@ -19,11 +19,11 @@ public class Log {
     }
 
     // Printing Methods
-    public void print(String text) {
+    private void print(String text) {
         System.out.println(text);
     }
 
-    public void print(String text, Object obj) {
+    private void print(String text, Object obj) {
         System.out.println("Message: " + text);
         System.out.println("From Class: " + obj.getClass().getSimpleName());
     }
