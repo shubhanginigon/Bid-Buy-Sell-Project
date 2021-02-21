@@ -4,7 +4,8 @@ public class Log {
 
     public static volatile Log shared;
 
-    private Log() {}
+    private Log() {
+    }
 
     public static Log getInstance() {
         if (shared == null) {
