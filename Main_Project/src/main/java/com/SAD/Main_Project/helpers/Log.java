@@ -24,6 +24,6 @@ public class Log {
 
     public void print(String text, Object obj) {
         System.out.println("Message: " + text);
-        System.out.println("Class: " + obj.getClass().getSimpleName());
+        System.out.println("From Class: " + obj.getClass().getSimpleName());
     }
 }
