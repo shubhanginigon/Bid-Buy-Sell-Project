@@ -3,7 +3,6 @@ package com.SAD.Main_Project.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-import lombok.Builder;
 import lombok.Data;
 
 import java.util.Set;
