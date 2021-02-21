@@ -46,8 +46,8 @@ public class User {
 
     private boolean isActive;
 
-//    @OneToOne(mappedBy = "user")
-//    @JsonBackReference
-//    private ConfirmationToken token;
+    @OneToOne(mappedBy = "user")
+    @JsonBackReference
+    private ConfirmationToken token;
 
 }

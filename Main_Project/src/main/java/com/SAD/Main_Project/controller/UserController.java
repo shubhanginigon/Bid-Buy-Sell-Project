@@ -1,8 +1,10 @@
 package com.SAD.Main_Project.controller;
 
 import com.SAD.Main_Project.helpers.Log;
+import com.SAD.Main_Project.model.ConfirmationToken;
 import com.SAD.Main_Project.model.RoleFacade;
 import com.SAD.Main_Project.model.User;
+import com.SAD.Main_Project.service.ConfirmationTokenService;
 import com.SAD.Main_Project.service.UserService;
 import com.SAD.Main_Project.validation.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +30,10 @@ public class UserController {
     @Autowired
     private UserValidator userValidator;
 
-    //@Autowired
-    //private ConfirmationTokenService ctokenService;
+    @Autowired
+    private ConfirmationTokenService cTokenService;
 
-    @RequestMapping(path = "/home")
+    @RequestMapping(path = {"/home", "/"})
     public ModelAndView homePage(Principal principal) {
 
         ModelAndView mv = new ModelAndView("home.jsp");
@@ -46,7 +48,7 @@ public class UserController {
 
         // Using Roles based on user types
         if (user != null) { // This check can be discarded as principal is already checked
-            Log.shared.print("Getting User Role", this);
+            //Log.shared.print("Getting User Role", this);
             userRoleName = user.getRole().getName();
 
             if (userRoleName.equalsIgnoreCase("ROLE_ADMIN")) {
@@ -54,17 +56,18 @@ public class UserController {
             }
             else if (userRoleName.equalsIgnoreCase("ROLE_USER")){
                 // Show view with registered users privileges
-                mv = new ModelAndView("home.jsp");
+                //mv.addObject("user", user);
+                mv = new ModelAndView("user_home.jsp");
             }
             else {
                 // Show view with unregistered users privileges
                 mv = new ModelAndView("home.jsp");
-                Log.shared.print("General Visitor", this);
+                //Log.shared.print("General Visitor", this);
+
             }
 
             mv.addObject("user", user);
         }
-
 
         return mv;
     }
@@ -88,33 +91,43 @@ public class UserController {
         return "confirm_account.jsp";
     }
 
-    /*
+
     @Transactional
-    @RequestMapping(path = "/confirm-account", method = {RequestMethod.GET, RequestMethod.POST})
-    public ModelAndView confirmUserAccount(ModelAndView mv, @RequestParam("token") String token) {
+    @RequestMapping(path = "/confirm-account", method = RequestMethod.GET)
+    public ModelAndView confirmUserAccount(@RequestParam("token") String token) {
+
+        ModelAndView mv = null;
 
         // Check if token received exists in the database
-        ConfirmationToken cToken = ctokenService.findByToken(token);
+        ConfirmationToken cToken = cTokenService.findByTokenString(token);
 
         if (cToken != null) { // Exists
             // Success
             User confirmedUser = cToken.getUser();
             if (!confirmedUser.isActive()) {
                 confirmedUser.setActive(true);
+                confirmedUser.setConfirmPassword(confirmedUser.getPassword());
             }
-            mv.setViewName("account_verified.jsp");
+            mv = new ModelAndView("account_verified.jsp");
+            //mv.setViewName("account_verified.jsp");
         } else {
             // Fail
+            mv = new ModelAndView("error.jsp");
             mv.addObject("message", "The link is invalid or broken.");
-            mv.setViewName("error.jsp");
+            //mv.setViewName("error.jsp");
         }
 
         return mv;
     }
-    */
 
-    @RequestMapping(path = "/login")
-    public String login() {
+    @RequestMapping(path="/login", method=RequestMethod.POST)
+    public ModelAndView loginUser(ModelAndView mv, User user) {
+
+        return mv;
+    }
+
+    @RequestMapping(path="/login", method=RequestMethod.GET)
+    public String displayLogin() {
         return "login.jsp";
     }
     

@@ -33,8 +33,7 @@ public class EmailFacade {
                 from = "admin@bbs.com";
                 to = user.getEmail();
 
-                //String token = user.getToken().getToken();
-                String token = "TBD";
+                String token = user.getToken().getToken();
                 //String token = ctokenService.findByUserId(user.getUid()).getToken();
                 text = "Welcome to our platform. Please click on link below to complete your registration.\n" +
                         "http://localhost/confirm-account?token=" + token;
