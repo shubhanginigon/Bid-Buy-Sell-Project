@@ -44,12 +44,10 @@ public class UserController {
 
             if (userRoleName.equalsIgnoreCase("ROLE_ADMIN")) {
                 mv = new ModelAndView("dashboard.jsp");
-            }
-            else if (userRoleName.equalsIgnoreCase("ROLE_USER")){
+            } else if (userRoleName.equalsIgnoreCase("ROLE_USER")) {
                 // Show view with registered users privileges
                 mv = new ModelAndView("home.jsp");
-            }
-            else {
+            } else {
                 // Show view with unregistered users privileges
                 mv = new ModelAndView("home.jsp");
                 Log.shared.print("General Visitor", this);
@@ -57,7 +55,6 @@ public class UserController {
 
             mv.addObject("user", user);
         }
-
 
         return mv;
     }
@@ -72,7 +69,7 @@ public class UserController {
     public String addUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
         userValidator.validate(user, bindingResult);
 
-        if(bindingResult.hasErrors()) {
+        if (bindingResult.hasErrors()) {
             return "register.jsp";
         }
 
@@ -85,9 +82,9 @@ public class UserController {
     public String login() {
         return "login.jsp";
     }
-    
+
     @RequestMapping(path = "/logout-success")
-	public String logout() {
-		return "logout.jsp";
+    public String logout() {
+        return "logout.jsp";
     }
 }

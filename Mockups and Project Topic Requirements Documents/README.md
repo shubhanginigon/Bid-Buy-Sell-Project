@@ -5,7 +5,7 @@
 > 
 | Activities 	 | Progress  |
 | :----| :--: |
-| 1.	Planning|  Done |
+| 1.	Planning|   |
 | 1.1. Project topic, problem statement and System scope | Done |
 | 1.2. Assignment of members, their roles and scheduling | Done |
 | 1.3. Setting up project git repo | Done |
