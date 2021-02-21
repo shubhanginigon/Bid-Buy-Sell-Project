@@ -6,9 +6,12 @@ import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class User {
 
     public enum Gender {
@@ -38,10 +41,13 @@ public class User {
     @Transient
     private String confirmPassword;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JsonBackReference
+    @ManyToOne(targetEntity = Role.class, fetch = FetchType.EAGER)
     private Role role;
 
     private boolean isActive;
+
+    @OneToOne(mappedBy = "user")
+    @JsonBackReference
+    private ConfirmationToken token;
 
 }
