@@ -1,8 +1,8 @@
 ># _This is considered the first official phase of the SAD project._
 
-#### _**Work Break Down:**_
-> Planned Schedule
-> 
+>#### _**Work Break Down**_
+Progression table:
+
 | Activities 	 | Progress  |
 | :----| :--: |
 | 1.	Planning|   |
