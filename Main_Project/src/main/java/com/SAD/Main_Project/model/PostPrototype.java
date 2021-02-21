@@ -10,20 +10,20 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class PostPrototype {
 	private List<String> postList;
-	
+
 	public PostPrototype() {
 		postList = new ArrayList<String>();
 	}
-	
+
 	public PostPrototype(List<String> list) {
-		this.postList=list;
+		this.postList = list;
 	}
-	
+
 	public void loadData() {
-		
+
 	}
-	
-	public List<String> getPostList(){
+
+	public List<String> getPostList() {
 		return postList;
 	}
 }
