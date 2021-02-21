@@ -1,5 +1,47 @@
 ># _This is considered the first official phase of the SAD project._
 
+#### _**Work Break Down:**_
+> Planned Schedule
+> 
+| Activities 	 | Progress  |
+| :----| :--: |
+| 1.	Planning|  Done |
+| 1.1. Project topic, problem statement and System scope | Done |
+| 1.2. Assignment of members, their roles and scheduling | Done |
+| 1.3. Setting up project git repo | Done |
+| 1.4. Quality attribute analysis | Done |
+| 1.5.	Background study on architecture and design patterns | Done |
+| 2.	Project requirements |  |
+| 2.1.	 Determining and analysis of system requirements| Done| 
+| 2.2.	 Initial UI Mockups design  | Done |
+| 2.3.	 Preliminary Use case diagram and sequence diagram| Done |
+| 2.4.	 One series of mockups for one use case.  || Done|
+| 2.5.	 Risk and mitigation plan | Done |
+| 2.6.	 Software requirements document.	 | Done |
+| 3.	Architectural Design |  |
+| 3.1.	 Design analysis |  |
+| 3.2.	 Final Use-case diagrams, class-diagrams, sequence diagrams, deployment diagrams	 |  |
+| 3.3.	 Literature review (RELATED WORK)	 |  |
+| 3.4.	 Draft Scientific report	|  |
+| 4.	Implementation 	 |  |
+| 4.1.	 Code design patterns |  Done |
+| 4.2.	 Home page, login form, registration form | Done |
+| 4.3.	 Email functionality with authentication and authorization| Done |
+| 4.4.	 Implement ORM 	 |  |
+| 4.5.	 TBD|  |
+| 5.	Testing 	 |  |
+| 5.1.	 Unit testing 	 |  |
+| 5.2.	 Integration testing 	 |  |
+| 5.3.	 Performance testing	 |  |
+| 5.4.	 Stress testing 	 |  |
+| 5.5.	 Acceptance testing	 |  |
+| 5.6.	 Testing Documentation	 |  |
+| 5.7.	 Update Scientific report	 |  |
+| 6.	Documentation 	 |  |
+| 6.1.	 Presentation slide	  |  |
+| 6.2.	 Final Scientific report	 |  |
+| 6.3.	 All updated Requirement, Design, Testing documents	 |  |
+
 #### _**Use Case Diagram**_
 ![alt](Image/Use_Case_Diagram.png)
 
@@ -10,4 +52,5 @@
 
 2. **Requirements** 
    - explaining project requirements in details. Document the (1)stakeholders, (2) must-have vs. good to have requirements, (3) project timeline, (4) risk and mitigation plan, (5) initial architecture - some initial class and sequence diagrams, deployment diagrams, external parties in UML format.
+
 
