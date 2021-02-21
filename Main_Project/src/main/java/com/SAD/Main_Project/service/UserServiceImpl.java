@@ -1,6 +1,7 @@
 package com.SAD.Main_Project.service;
 
 import com.SAD.Main_Project.dao.UserJPADao;
+import com.SAD.Main_Project.model.ConfirmationToken;
 import com.SAD.Main_Project.model.RoleFacade;
 import com.SAD.Main_Project.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,16 +20,22 @@ public class UserServiceImpl implements UserService {
     @Autowired
     RoleFacade roleFacade;
 
+    @Autowired
+    ConfirmationTokenService cTokenService;
+
     @Override
     public void save(User user) {
         // Encrypt Password
         String hashedPassword = bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(hashedPassword);
-        user.setActive(true);
+        //user.setActive(true); // DO THIS LATER AFTER EMAIL CONFIRMATION
         user.setRole(roleFacade.createRole(RoleFacade.RoleType.USER));
 
         // Save User
         userDao.save(user);
+
+        // Save confirmation token for user
+        ConfirmationToken cToken = cTokenService.generateConfirmationTokenFor(user);
 
         // Send Registration Success Mail
 
