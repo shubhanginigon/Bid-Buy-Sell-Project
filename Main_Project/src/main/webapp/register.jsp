@@ -37,7 +37,9 @@
             <h2 class="text-center"><strong>Create</strong> an account.</h2>
             <spring:bind path="name">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="name" placeholder="Full Name" required="">
+                    <form:input path="name" class="form-control" type="text" name="name" placeholder="Full Name" />
+                    <form:errors class="text-danger small" path="name" />
+                    <div class="text-danger small"></div>
                 </div>
             </spring:bind>
 
@@ -52,18 +54,23 @@
 
             <spring:bind path="email">
                 <div class="form-group">
-                    <input class="form-control" type="email" name="email" placeholder="Email" required="">
+                    <form:input path="email" class="form-control" type="email" name="email" placeholder="Email" />
+                    <form:errors class="text-danger small" path="email" />
                 </div>
             </spring:bind>
 
             <spring:bind path="password">
-                <div class="form-group"><input class="form-control" type="password" name="password"
-                                               placeholder="Password"
-                                               required=""></div>
+                <div class="form-group">
+                    <form:input path="password" class="form-control" type="password" name="password" placeholder="Password" />
+                    <form:errors class="text-danger small" path="password" />
+                </div>
             </spring:bind>
             <spring:bind path="confirmPassword">
-                <div class="form-group"><input class="form-control" type="password" name="confirmPassword"
-                                               placeholder="Confirm Password" required=""></div>
+                <div class="form-group">
+                    <form:input path="confirmPassword" class="form-control" type="password" name="confirmPassword"
+                                               placeholder="Confirm Password" />
+                    <form:errors class="text-danger small" path="confirmPassword" />
+                </div>
             </spring:bind>
 
             <div class="form-group">

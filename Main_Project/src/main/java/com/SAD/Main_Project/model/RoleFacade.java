@@ -1,6 +1,7 @@
 package com.SAD.Main_Project.model;
 
 import com.SAD.Main_Project.dao.RoleJPADao;
+import com.SAD.Main_Project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class RoleFacade {
 
     @Autowired
-    RoleJPADao roleDao;
+    private RoleJPADao roleDao;
 
     public enum RoleType {
         ADMIN, USER

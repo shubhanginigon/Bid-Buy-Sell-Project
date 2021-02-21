@@ -9,4 +9,6 @@ public interface UserJPADao extends JpaRepository<User, Integer> {
 
     User findByEmail(String email);
 
+    //User findByConfirmationToken(String token);
+
 }

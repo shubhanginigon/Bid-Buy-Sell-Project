@@ -1,6 +1,7 @@
 package com.SAD.Main_Project.controller;
 
 import com.SAD.Main_Project.helpers.Log;
+import com.SAD.Main_Project.model.RoleFacade;
 import com.SAD.Main_Project.model.User;
 import com.SAD.Main_Project.service.UserService;
 import com.SAD.Main_Project.validation.UserValidator;
@@ -11,8 +12,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.security.Principal;
 
@@ -25,8 +28,12 @@ public class UserController {
     @Autowired
     private UserValidator userValidator;
 
+    //@Autowired
+    //private ConfirmationTokenService ctokenService;
+
     @RequestMapping(path = "/home")
     public ModelAndView homePage(Principal principal) {
+
         ModelAndView mv = new ModelAndView("home.jsp");
         String userRoleName = "ROLE_VISITOR";
 
@@ -78,8 +85,33 @@ public class UserController {
 
         userService.save(user);
 
-        return "login.jsp";
+        return "confirm_account.jsp";
     }
+
+    /*
+    @Transactional
+    @RequestMapping(path = "/confirm-account", method = {RequestMethod.GET, RequestMethod.POST})
+    public ModelAndView confirmUserAccount(ModelAndView mv, @RequestParam("token") String token) {
+
+        // Check if token received exists in the database
+        ConfirmationToken cToken = ctokenService.findByToken(token);
+
+        if (cToken != null) { // Exists
+            // Success
+            User confirmedUser = cToken.getUser();
+            if (!confirmedUser.isActive()) {
+                confirmedUser.setActive(true);
+            }
+            mv.setViewName("account_verified.jsp");
+        } else {
+            // Fail
+            mv.addObject("message", "The link is invalid or broken.");
+            mv.setViewName("error.jsp");
+        }
+
+        return mv;
+    }
+    */
 
     @RequestMapping(path = "/login")
     public String login() {
