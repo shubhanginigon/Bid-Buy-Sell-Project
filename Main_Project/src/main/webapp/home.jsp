@@ -18,7 +18,12 @@
   <body>
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
       <div class="container">
-        <a class="navbar-brand" href="/home">AIT - Bid Buy Sell</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+        <a class="navbar-brand" href="/home">AIT - Bid Buy Sell</a
+        ><button
+          data-toggle="collapse"
+          class="navbar-toggler"
+          data-target="#navcol-1"
+        >
           <span class="sr-only">Toggle navigation</span
           ><span class="navbar-toggler-icon"></span>
         </button>
@@ -33,7 +38,12 @@
           </ul>
           <span class="navbar-text actions">
             <a class="login" href="/login">Log In</a>
-            <a class="btn btn-light action-button" role="button" href="/register">Register</a>
+            <a
+              class="btn btn-light action-button"
+              role="button"
+              href="/register"
+              >Register</a
+            >
           </span>
         </div>
       </div>
@@ -88,7 +98,7 @@
             <div class="box">
               <img
                 class="rounded-circle"
-                src="assets/img/3.jpg"
+                src="assets/img/st121775.png"
                 style="height: 160px"
               />
               <h3 class="name">Mr. Tshering</h3>
@@ -96,8 +106,8 @@
               <p class="description">
                 Have work in many project as develpor and project manager. In
                 this project, we focus on architecture and design of the bidding
-                system which will be output oriented. With proper planning the
-                SAD project will be HAPPY project.
+                system. With proper planning the SAD project will be HAPPY
+                project.
               </p>
               <div class="social">
                 <a href="#"><i class="fa fa-facebook-official"></i></a
