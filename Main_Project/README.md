@@ -50,7 +50,7 @@ In this, we have all the code files for our project:  _“E-commerce website to 
 4. Factory
 5. Observer
 6. State
-7. facade
+7. Facade
 
 The details of pattern is given each package that we have created and might change or add more depending on the requirements.
 
