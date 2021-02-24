@@ -16,7 +16,7 @@ In this, we have all the code files for our project:  _“E-commerce website to 
 | 2.1.	 Determining and analysis of system requirements| Done| 
 | 2.2.	 Initial UI Mockups design  | Done |
 | 2.3.	 Preliminary Use case diagram and sequence diagram| Done |
-| 2.4.	 One series of mockups for one use case.  || Done|
+| 2.4.	 One series of mockups for one use case.  | Done|
 | 2.5.	 Risk and mitigation plan | Done |
 | 2.6.	 Software requirements document.	 | Done |
 | 3.	Architectural Design |  |
