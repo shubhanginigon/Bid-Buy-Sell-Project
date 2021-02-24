@@ -1,9 +1,20 @@
 ># _This is considered the first official phase of the SAD project._
 
+## Deliverables:
+
+> Following files are uploaded in this directory.
+
+1. **UI Mockups** 
+   - explaining applications using mockups.
+
+2. **Requirements** 
+   - explaining project requirements in details.
+
+
 >#### _**Work Break Down**_
 Progression table:
 
-| Activities 	 | Progress  |
+| Activities 	 | Remarks  |
 | :----| :--: |
 | 1.	Planning|   |
 | 1.1. Project topic, problem statement and System scope | Done |
@@ -15,7 +26,7 @@ Progression table:
 | 2.1.	 Determining and analysis of system requirements| Done| 
 | 2.2.	 Initial UI Mockups design  | Done |
 | 2.3.	 Preliminary Use case diagram and sequence diagram| Done |
-| 2.4.	 One series of mockups for one use case.  || Done|
+| 2.4.	 One series of mockups for one use case.  | Done|
 | 2.5.	 Risk and mitigation plan | Done |
 | 2.6.	 Software requirements document.	 | Done |
 | 3.	Architectural Design |  |
@@ -44,13 +55,4 @@ Progression table:
 
 #### _**Use Case Diagram**_
 ![alt](Image/Use_Case_Diagram.png)
-
-## Deliverables:
-
-1. **UI Mockups** 
-   - explaining applications using mockups. These mockups is use-case based, i.e., one series of mockups for one use case. 
-
-2. **Requirements** 
-   - explaining project requirements in details. Document the (1)stakeholders, (2) must-have vs. good to have requirements, (3) project timeline, (4) risk and mitigation plan, (5) initial architecture - some initial class and sequence diagrams, deployment diagrams, external parties in UML format.
-
 
