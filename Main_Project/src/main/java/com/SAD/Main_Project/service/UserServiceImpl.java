@@ -42,17 +42,17 @@ public class UserServiceImpl implements UserService {
 
 
         // Save User
-        userDao.save(user);
+        User savedUser = userDao.save(user);
 
 
         // Save confirmation token for user
-        ConfirmationToken cToken = cTokenService.generateConfirmationTokenFor(user);
-        user.setToken(cToken);
-        user.setConfirmPassword(hashedPassword);
+        ConfirmationToken cToken = cTokenService.generateConfirmationTokenFor(savedUser);
+        savedUser.setToken(cToken);
+        //savedUser.setConfirmPassword(hashedPassword);
 
 
         // Send Registration Success Mail
-        SimpleMailMessage msg = EmailFacade.generateEmailFor(EmailFacade.EmailType.REGISTER_CONFIRM, user);
+        SimpleMailMessage msg = EmailFacade.generateEmailFor(EmailFacade.EmailType.REGISTER_CONFIRM, savedUser);
         emailService.sendEmail(msg);
     }
 
