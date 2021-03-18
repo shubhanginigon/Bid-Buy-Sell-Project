@@ -1,5 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -37,7 +38,7 @@
 <div class="register-photo">
     <div class="form-container">
         <div class="image-holder"></div>
-        <form:form method="post" modelAttribute="user">
+        <form:form action="/register" method="post" modelAttribute="user">
             <h2 class="text-center"><strong>Create</strong> an account.</h2>
             <spring:bind path="name">
                 <div class="form-group">
@@ -47,14 +48,10 @@
                 </div>
             </spring:bind>
 
-            <spring:bind path="gender">
-                <div class="form-group">
-                    <select class="custom-select" name="gender">
-                        <option value="Male">Male</option>
-                        <option value="Female" selected="">Female</option>
-                    </select>
-                </div>
-            </spring:bind>
+
+            <div class="form-group">
+                <form:select path="gender" items="${genders}" class="custom-select" name="gender" />
+            </div>
 
             <spring:bind path="email">
                 <div class="form-group">

@@ -1,6 +1,6 @@
 package com.SAD.Main_Project.security;
 
-import com.SAD.Main_Project.dao.UserJPADao;
+import com.SAD.Main_Project.repo.UserRepo;
 import com.SAD.Main_Project.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class MyUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private UserJPADao userDao;
+    private UserRepo userDao;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

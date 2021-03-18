@@ -5,22 +5,19 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class User {
-
-    public enum Gender {
-        Male, Female
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int uid;
+    private int id;
 
     @Column(nullable = false)
     @NotBlank(message = "This field is required.")
@@ -37,17 +34,15 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @NotBlank(message = "This field is required.")
     @Transient
     private String confirmPassword;
+
+    private boolean active = false;
 
     @ManyToOne(targetEntity = Role.class, fetch = FetchType.EAGER)
     private Role role;
 
-    private boolean isActive;
-
-    @OneToOne(mappedBy = "user")
-    @JsonBackReference
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private ConfirmationToken token;
 
 }

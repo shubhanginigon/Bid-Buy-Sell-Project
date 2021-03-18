@@ -33,12 +33,17 @@ public class EmailFacade {
                 from = "admin@bbs.com";
                 to = user.getEmail();
 
-                String token = user.getToken().getToken();
+                String token = user.getToken().getTokenString();
                 //String token = ctokenService.findByUserId(user.getUid()).getToken();
                 text = "Welcome to our platform. Please click on link below to complete your registration.\n" +
-                        "http://localhost/confirm-account?token=" + token;
+                        "http://localhost:8080/confirm-account?token=" + token;
+                break;
 
             case REGISTER_SUCCESS:
+                subject = "AIT-Bid Buy Sell: Registration Complete";
+                from = "admin@bbs.com";
+                to = user.getEmail();
+                text = "Congratulations, your registration process is complete. Now you can Bid, Buy and Sell !";
                 break;
 
             case NOTIFICATION:

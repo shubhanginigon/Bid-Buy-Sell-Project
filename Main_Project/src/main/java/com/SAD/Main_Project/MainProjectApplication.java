@@ -1,7 +1,14 @@
 package com.SAD.Main_Project;
 
+import com.SAD.Main_Project.model.Role;
+import com.SAD.Main_Project.repo.RoleRepo;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.Async;
+
+import java.util.Arrays;
 
 @SpringBootApplication
 public class MainProjectApplication {
@@ -10,6 +17,12 @@ public class MainProjectApplication {
 		SpringApplication.run(MainProjectApplication.class, args);
 	}
 
-
+	@Bean
+	public ApplicationRunner initializer(RoleRepo roleRepo) {
+		return args -> roleRepo.saveAll(Arrays.asList(
+				Role.builder().id(1).name("ROLE_ADMIN").build(),
+				Role.builder().id(2).name("ROLE_USER").build()
+		));
+	}
 
 }
