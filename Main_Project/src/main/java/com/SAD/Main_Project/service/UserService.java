@@ -7,4 +7,6 @@ public interface UserService {
 
     // used by validation to check email
     public User findByEmail(String email);
+
+    boolean activateUserWithToken(String tokenString);
 }

@@ -1,3 +1,6 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
 
@@ -9,18 +12,19 @@
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
-    <link rel="stylesheet" href="assets/css/Footer-Basic.css" />
-    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css" />
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css"/>
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css"/>
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css"/>
 </head>
 
 <body>
 <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
     <div class="container">
-        <a class="navbar-brand" href="/home">AIT - Bid Buy Sell</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+        <a class="navbar-brand" href="/home">AIT - Bid Buy Sell</a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
           <span class="sr-only">Toggle navigation</span
           ><span class="navbar-toggler-icon"></span>
-    </button>
+        </button>
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="nav navbar-nav mr-auto">
                 <li class="nav-item">
@@ -38,18 +42,28 @@
     </div>
 </nav>
 <div class="login-clean">
-    <form action="/login" method="POST">
+    <form:form method="POST" action="/login" modelAttribute="user">
         <h2 class="sr-only">Login Form</h2>
         <div class="illustration"><i class="icon ion-ios-contact"></i></div>
-        <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required="">
-        </div>
-        <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"
-                                       required=""></div>
+        <spring:bind path="email">
+            <div class="form-group">
+                <form:input path="email" class="form-control" type="email" name="email" placeholder="Email" />
+                <form:errors class="text-danger small" path="email" />
+            </div>
+        </spring:bind>
+
+        <spring:bind path="password">
+            <div class="form-group">
+                <form:input path="password" class="form-control" type="password" name="password" placeholder="Password" />
+                <form:errors class="text-danger small" path="password" />
+            </div>
+        </spring:bind>
+
         <div class="form-group">
             <button class="btn btn-primary btn-block" type="submit" name="submit">Log In</button>
         </div>
         <a class="forgot" href="#">Forgot your email or password?</a>
-    </form>
+    </form:form>
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>

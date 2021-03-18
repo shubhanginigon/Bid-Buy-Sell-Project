@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css" />
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css" />
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
 </head>
 
 <body>
@@ -30,9 +34,9 @@
     </div>
 </nav>
 <div class="container">
-    <div class="row-cols-8 offset-2 pt-3">
+    <div class="row">
         <div class="alert alert-danger">
-            <p>Error has occurred. ${message}</p>
+            <p>Error: ${message}</p>
         </div>
     </div>
 </div>

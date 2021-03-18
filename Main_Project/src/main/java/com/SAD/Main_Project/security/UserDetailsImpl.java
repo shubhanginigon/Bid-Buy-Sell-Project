@@ -29,7 +29,7 @@ public class UserDetailsImpl implements UserDetails {
     }
 
     public int getId() {
-        return user.getUid();
+        return user.getId();
     }
 
     @Override
