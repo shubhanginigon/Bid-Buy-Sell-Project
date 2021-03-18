@@ -44,6 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .loginPage("/login").permitAll()
                     .usernameParameter("email")
                     .defaultSuccessUrl("/home", true)
+                    .failureForwardUrl("/login")
                 .and()
                 .logout()
                     .invalidateHttpSession(true)
