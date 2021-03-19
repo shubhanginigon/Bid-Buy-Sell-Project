@@ -29,17 +29,17 @@ Progression table:
 | 2.4.	 One series of mockups for one use case.  | Done|
 | 2.5.	 Risk and mitigation plan | Done |
 | 2.6.	 Software requirements document.	 | Done |
-| 3.	Architectural Design |  |
-| 3.1.	 Design analysis |  |
-| 3.2.	 Final Use-case diagrams, class-diagrams, sequence diagrams, deployment diagrams	 |  |
-| 3.3.	 Literature review (RELATED WORK)	 |  |
-| 3.4.	 Draft Scientific report	|  |
-| 4.	Implementation 	 |  |
+| 3.	Architectural Design | progress |
+| 3.1.	 Design analysis | progress |
+| 3.2.	 Final Use-case diagrams, class-diagrams, sequence diagrams, deployment diagrams	 | progress |
+| 3.3.	 Literature review (RELATED WORK)	 | progress |
+| 3.4.	 Draft Scientific report	| progress |
+| 4.	Implementation 	 | progress |
 | 4.1.	 Code design patterns |  Done |
 | 4.2.	 Home page, login form, registration form | Done |
 | 4.3.	 Email functionality with authentication and authorization| Done |
-| 4.4.	 Implement ORM 	 |  |
-| 4.5.	 TBD|  |
+| 4.4.	 Product model 	 | progress |
+| 4.5.	 Bidding model|  |
 | 5.	Testing 	 |  |
 | 5.1.	 Unit testing 	 |  |
 | 5.2.	 Integration testing 	 |  |
