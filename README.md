@@ -19,50 +19,17 @@ In case of AIT, this platform can be used to sell the used items. More than one 
  - Model-View Controller (MVC)
  - Client-server
 
+#### _**Detail Quality attribute analysis:**_
 
-#### _**Implementation details:**_
-> Planned Schedule
-> 
-| Activities | 
-| :----| 
-| 1.	Planning|
-| 1.1. Project topic, problem statement and System scope |
-| 1.2. Assignment of members, their roles and scheduling | 
-| 1.3. Setting up project git repo | 
-| 1.4. Quality attribute analysis |
-| 1.5.	Background study on architecture and design patterns |
-| 2.	Project requirements |
-| 2.1.	 Determining and analysis of system requirements| 
-| 2.2.	 Initial UI Mockups design |
-| 2.3.	 Preliminary Use case diagram and sequence diagram|
-| 2.4.	 One series of mockups for one use case.  |
-| 2.5.	 Risk and mitigation plan |
-| 2.6.	 Software requirements document. | 
-| 3.	Architectural Design |
-| 3.1.	 Design analysis |
-| 3.2.	 Final Use-case diagrams, class-diagrams, sequence diagrams, deployment diagrams|
-| 3.3.	 Literature review (RELATED WORK)|
-| 3.4.	 Draft Scientific report| 
-| 4.	Implementation |
-| 4.1.	 Code design patterns|
-| 4.2.	 Home page, login form, registration form|
-| 4.3.	 Email functionality with authentication and authorization|
-| 4.4.	 Implement ORM |
-| 4.5.	 TBD|  
-| 5.	Testing|  
-| 5.1.	 Unit testing 	 | 
-| 5.2.	 Integration testing|
-| 5.3.	 Performance testing|
-| 5.4.	 Stress testing|
-| 5.5.	 Acceptance testing|
-| 5.6.	 Testing Documentation|
-| 5.7.	 Update Scientific report|
-| 6.	Documentation|
-| 6.1.	 Presentation slide|
-| 6.2.	 Final Scientific report|
-| 6.3.	 All updated Requirement, Design, Testing documents| 
+| Quality attributes | Priority Rating (L, M, H) | Priority Justification |
+| :----| :--: |  :----|
+| Performance | H | The output is to show who won and is bidding for the product in this system and we need to focus on concurrency and response time.<br/> This system should be available most of the time and it consists of transactions of lots of users concurrently.<br/> - The application should respond to a user within 2 seconds. <br/> - The application should be able to handle 5 transactions per second in the peak load time. <br/> - The application will be available with the uptime of 95% between 6.00 am to 12.00 am.|
+| Security | M | Since the site is buying and selling product, the payment or transactions with payment gateways might be incorporated so storing all the credit card information of the users, hence requiring high level of security mechanisms.<br/> - The system should be able to restore backward data of 24 hours (maximum 1 month) within 2 hours as a recovery function. <br/> - All the transaction data between client and server must be encrypted.|
+| Usability | M | System should be easy to modify since data will not remain the same all the time and input sources may change with newer buyers and sellers. For users with different privileges/roles, the system should modify and make changes accordingly.<br/> - The web app must support devices running on iOS versions 10.0 or later. <br/> - The web app must support devices running on android versions 7.0 or later. <br/> - The web app should be easy to operate  by users with a certain navigation menu or option. No need for a user manual.|
+| Interoperability | L | For the website we just import and integrate various information with pictures into the system from the seller. |
+| Scalability | L | With data, the storage size will increase but can manage before time. This app can be made vertically scalable when there is lack of memory storage. |
 
-#### _**Quality attribute analysis:**_
+#### _**Before Quality attribute analysis:**_
 ![alt](img/quality_attributes.png)
 
 
