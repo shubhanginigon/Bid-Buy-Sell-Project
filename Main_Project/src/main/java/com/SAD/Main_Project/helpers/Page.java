@@ -1,6 +1,7 @@
 package com.SAD.Main_Project.helpers;
 
 public class Page {
+    // User Login Register
     public static String REGISTER = "register.jsp";
     public static String LOGIN = "login.jsp";
     public static String LOGOUT = "logout.jsp";
@@ -10,4 +11,7 @@ public class Page {
     public static String CONFIRM_ACCOUNT = "confirm_account.jsp";
     public static String ACCOUNT_VERIFIED = "account_verified.jsp";
     public static String ERROR = "error.jsp";
+
+    // Product
+    public static String ADD_PRODUCT = "add_product.jsp";
 }

@@ -43,8 +43,18 @@
         </div>
     </div>
 </nav>
+
+
+
 <div class="team-boxed">
     <div class="container">
+
+        <div class="row">
+            <form action="/product/add" method="get">
+                <input type="submit" class="btn btn-info" value="Add New Product" />
+            </form>
+        </div>
+
         <div class="intro">
             <h2 class="text-center">Welcome ${user.name}</h2>
             <p class="text-center">
