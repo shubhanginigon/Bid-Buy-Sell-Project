@@ -45,12 +45,15 @@
 </nav>
 <div class="team-boxed">
     <div class="container">
+    	<div>
+    		<a class="btn btn-outline-secondary" href="/addProduct">Add Product</a>
+    	</div>    	
         <div class="intro">
             <h2 class="text-center">Welcome ${user.name}</h2>
             <p class="text-center">
                 On completion of this sad project, people in AIT will be able to
                 sell their products and make multiple buyers bid on the products.
-            </p>
+            </p>            
             <h2 class="text-center" style="margin: 0px">Our Team</h2>
         </div>
         <div class="row people">
