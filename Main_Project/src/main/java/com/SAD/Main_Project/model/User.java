@@ -1,10 +1,20 @@
 package com.SAD.Main_Project.model;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,7 +30,7 @@ public class User {
     private int id;
 
     @Column(nullable = false)
-    @NotBlank(message = "This field is required.")
+    // @NotBlank(message = "This field is required.")
     private String name;
 
     @Enumerated(EnumType.STRING)
@@ -30,7 +40,7 @@ public class User {
     @Email(message = "Email should be valid.")
     private String email;
 
-    @NotBlank(message = "This field is required.")
+    // @NotBlank(message = "This field is required.")
     @Column(nullable = false)
     private String password;
 
