@@ -62,6 +62,10 @@ public class ProductController {
         return mv;
     }
 	
+	 /*************
+     * Add Product
+     ************/
+	
 	private String addProductFormWith(ModelMap model) {
         model.addAttribute("product", model.containsKey("product") ? model.get("product") : new Product());
         //model.addAttribute("genders", Gender.values());
