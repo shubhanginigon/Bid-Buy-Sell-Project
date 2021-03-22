@@ -58,7 +58,7 @@
             <c:forEach items="${products}" var="product">
                 <div class="gift row col-12 product-list-item">
                     <div class="gift__img col-sm-3 col-12">
-                        <img src="assets/img/gift_01.jpg" alt="product image"/></div>
+                        <img class="product-img" src="assets/img/gift_01.jpg" alt="product image"/></div>
                     <div class="gift__info col-sm-9 col-12">
                         <h4 class="gift__name">${product.name}</h4>
                         <div class="gift__details">

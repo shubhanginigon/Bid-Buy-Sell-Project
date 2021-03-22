@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +18,8 @@
        th:attr='data-key=${stripePublicKey}, 
          data-amount=${amount}, 
          data-currency=${currency}'
-       data-name='Baeldung'
-       data-description='Spring course checkout'
+       data-name='BidBuySell'
+       data-description='We might store your credit card details!!...'
        data-image
          ='https://www.baeldung.com/wp-content/themes/baeldung/favicon/android-chrome-192x192.png'
        data-locale='auto'
