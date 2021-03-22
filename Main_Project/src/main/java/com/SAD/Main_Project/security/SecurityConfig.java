@@ -22,8 +22,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-    // Override methods
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService)
@@ -37,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                     .antMatchers("/login", "/register", "/home", "/confirm-account").permitAll()
                     .antMatchers("/admin/**").hasRole("ADMIN")
-                    .antMatchers("/bid/**", "/user/**").hasRole("USER")
+                    .antMatchers("/bid/**", "/user/**", "/product/**").hasRole("USER")
                     .antMatchers("/**").permitAll()
                 .and()
                 .formLogin()
@@ -51,8 +49,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .clearAuthentication(true)
                     .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                     .logoutSuccessUrl("/home").permitAll();
-
-        // To make h2 frame visible
-        //http.headers().frameOptions().disable();
     }
 }
