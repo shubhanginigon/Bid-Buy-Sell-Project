@@ -1,14 +1,12 @@
 package com.SAD.Main_Project.model;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,21 +23,30 @@ public class Product {
     private int pid;
 
     @Column(nullable = false)
-    @NotBlank(message = "This field is required.")
+    //@NotBlank(message = "This field is required.")
     private String name;
 
     @Column(nullable = false)
-    @NotBlank(message = "This field is required.")
+    //@NotBlank(message = "This field is required.")
     private double price;
 
-    private String productDetail;
+    private String description;
 
     @Column(nullable = false)
-    @NotBlank(message = "This field is required.")
+    //@NotBlank(message = "This field is required.")
     private byte[] picture;
 
-    private Date startDate;
+    private LocalDateTime startDate;
 
-    private Date finishDate;
+    @Transient
+    private String startDate_;
 
+    private LocalDateTime finishDate;
+
+    @Transient
+    private String finishDate_;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonIgnore
+    private User user;
 }

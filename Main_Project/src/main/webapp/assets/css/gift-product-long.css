@@ -1,0 +1,149 @@
+.gift {
+  width: 100%;
+  border: 1px solid #e2e2e2;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  color: white;
+}
+
+.gift__img {
+  text-align: center;
+  padding: 10px;
+  border: none;
+}
+
+.gift__img img {
+  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+}
+
+.gift__name {
+  font-size: 20px;
+  display: block;
+  font-weight: 700;
+  font-style: normal;
+  margin: 2px 0 10px 0;
+  color: #4c4c4c;
+  text-align: left;
+}
+
+.gift__details {
+  font-size: 14px;
+  font-weight: 400;
+  color: #808080;
+  line-height: 18px;
+  font-style: italic;
+}
+
+.gift__details p {
+  padding: 0;
+  margin-bottom: 3px;
+}
+
+.gift__bottom {
+  padding: 10px 0;
+}
+
+.gift__price-wrap {
+  color: #444444;
+  line-height: 18px;
+  font-size: 15px;
+}
+
+.gift__normal-price {
+  font-size: 15px;
+}
+
+.gift__normal-price .gift__data {
+  text-decoration: line-through;
+}
+
+.gift__today-price {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.gift__today-price .gift__data {
+  color: green;
+  font-size: 20px;
+}
+
+.gift__quantity-left {
+  margin-top: 5px;
+}
+
+.gift__cta-wrap {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.gift__cta {
+  max-width: 265px;
+  background-color: #56c6c6;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 15px;
+  color: #fff;
+  font-weight: 700;
+  padding: 17px 15px 17px;
+  outline: none;
+  line-height: 18px;
+  transition: all 0.3s;
+  min-width: 100px;
+}
+
+.gift__cta:hover {
+  background: #3e5062;
+  text-decoration: none;
+  color: #fff;
+}
+
+.gift__cta-note {
+  font-size: 13px;
+  color: #336f25;
+  padding-top: 5px;
+  display: block;
+}
+
+.gift__rating {
+  margin: 10px 0 0;
+  text-align: center;
+}
+
+.gift__rating i {
+  color: #FFD700;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.gift__rating-number {
+  font-size: 13px;
+  margin-left: 4px;
+  line-height: 15px;
+  vertical-align: text-top;
+  margin-bottom: 3px;
+}
+
+@media (min-width: 768px) {
+  .gift__img {
+    border: 1px solid #e2e2e2;
+  }
+}
+
+@media (min-width: 768px) {
+  .gift__cta {
+    font-size: 18px;
+  }
+}
+
+a.bid_button {
+  background-color: #56c6c6;
+  min-width: 100px;
+  text-align: center;
+  padding: 10px;
+}
+
