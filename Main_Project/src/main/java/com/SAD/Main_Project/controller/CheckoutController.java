@@ -5,7 +5,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.SAD.Main_Project.helpers.Page;
 import com.SAD.Main_Project.model.ChargeRequest;
@@ -22,6 +21,6 @@ public class CheckoutController {
         model.addAttribute("amount", 50 * 100); // in cents
         model.addAttribute("stripePublicKey", stripePublicKey);
         model.addAttribute("currency", ChargeRequest.Currency.USD);
-        return Page.CHECKOUT;
+        return Page.CHECKOUTS;
     }
 }

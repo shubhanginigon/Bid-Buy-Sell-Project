@@ -1,10 +1,8 @@
 package com.SAD.Main_Project.model;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
