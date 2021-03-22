@@ -50,73 +50,33 @@
     </nav>
     <div class="team-boxed">
       <div class="container">
-        <div class="intro">
-          <h2 class="text-center">Under Construction ...</h2>
-          <p class="text-center">
-            On completion of this sad project, people in AIT will be able to
-            sell their products and make multiple buyers bid on the products.
-          </p>
-          <h2 class="text-center" style="margin: 0px">Our Team</h2>
-        </div>
-        <div class="row people">
-          <div class="col-md-6 col-lg-4 item">
-            <div class="box">
-              <img class="rounded-circle" src="assets/img/1.jpg" />
-              <h3 class="name">Mr. Tamrakar</h3>
-              <p class="title">FRONT-END Developer</p>
-              <p class="description">
-                Give me idea, I will turn your idea into a fully functional
-                project. If you have a concrete idea, please drop me in my
-                mailing address. My mailing address is
-                suyogya.tamrakar@gmail.com
-              </p>
-              <div class="social">
-                <a href="#"><i class="fa fa-facebook-official"></i></a
-                ><a href="#"><i class="fa fa-twitter"></i></a
-                ><a href="#"><i class="fa fa-instagram"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 item">
-            <div class="box">
-              <img class="rounded-circle" src="assets/img/2.jpg" />
-              <h3 class="name">Ms. Gontia</h3>
-              <p class="title">Back-end Developer</p>
-              <p class="description">
-                Experienced in Java Spring Boot Framework. I know database
-                management and data modeling using SQL, NoSQL and Graph models.
-                This project is going to have SQL.
-              </p>
-              <div class="social">
-                <a href="#"><i class="fa fa-facebook-official"></i></a
-                ><a href="#"><i class="fa fa-twitter"></i></a
-                ><a href="#"><i class="fa fa-instagram"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 item">
-            <div class="box">
-              <img
-                class="rounded-circle"
-                src="assets/img/st121775.png"
-                style="height: 160px"
-              />
-              <h3 class="name">Mr. Tshering</h3>
-              <p class="title">FULL STACK WEB DEVELOPER</p>
-              <p class="description">
-                Have work in many project as develpor and project manager. In
-                this project, we focus on architecture and design of the bidding
-                system. With proper planning the SAD project will be HAPPY
-                project.
-              </p>
-              <div class="social">
-                <a href="#"><i class="fa fa-facebook-official"></i></a
-                ><a href="#"><i class="fa fa-twitter"></i></a
-                ><a href="#"><i class="fa fa-instagram"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="card">
+      <table>
+        <tr>
+          <th>Image</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src="https://dynaimage.cdn.cnn.com/cnn/q_auto,w_1100,c_fill,g_auto,h_619,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F200623110902-cheddar-cubes.jpg"
+              alt="cheese"
+            />
+          </td>
+          <td>
+            <div><b>Product Name:</b>YT Cheese</div>
+            <div><b>Type:</b>New</div>
+            <div><b>Description:</b>Good for health</div>
+          </td>
+          <td>
+            <span class="btn">
+              <button onclick="bid">BID</button>
+            </span>
+          </td>
+        </tr>
+      </table>
+    </div>
       </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
