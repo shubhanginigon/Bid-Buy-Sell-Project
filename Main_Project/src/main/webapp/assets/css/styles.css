@@ -6,3 +6,8 @@
     margin-top: 10px;
     background-color: white;
 }
+
+.product-img {
+	width: 150px;
+  height: auto;	
+}
