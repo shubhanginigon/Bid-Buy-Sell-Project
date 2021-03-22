@@ -1,18 +1,21 @@
 package com.SAD.Main_Project.controller;
 
 import java.security.Principal;
+import java.text.ParseException;
+import java.time.LocalDateTime;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
+import com.SAD.Main_Project.validation.ProductValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.SAD.Main_Project.helpers.Page;
@@ -22,6 +25,7 @@ import com.SAD.Main_Project.service.ProductService;
 import com.SAD.Main_Project.service.UserService;
 
 @Controller
+@RequestMapping("product")
 public class ProductController {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
@@ -31,62 +35,50 @@ public class ProductController {
 	
 	@Autowired
     private UserService userService;
-	
-	 /*************
-     * Product List
-     ************/
-	
-	@RequestMapping(path = {"/bid"})
-    public ModelAndView productList(Principal principal) {
-        LOGGER.info("Showing product list...");
-        ModelAndView mv = new ModelAndView(Page.HOME);
 
-        User user = userService.findByEmail(principal.getName());
+	@Autowired
+	ProductValidator productValidator;
 
-        // Using Roles based on user types
-        if (user.isActive()) {
-            String userRoleName = user.getRole().getName();
-
-            if (userRoleName.equalsIgnoreCase("ROLE_ADMIN")) {
-                mv = new ModelAndView(Page.DASHBOARD);
-                LOGGER.info("Showing Dashboard for Admin.");
-            }
-            else if (userRoleName.equalsIgnoreCase("ROLE_USER")){
-                // Show view with registered users privileges
-                mv = new ModelAndView(Page.USER_HOME);
-                LOGGER.info("Showing Registered User Home Page");
-            }
-
-            mv.addObject("user", user);
-        }
-        return mv;
-    }
+	User user;
 	
 	 /*************
      * Add Product
      ************/
-	
-	private String addProductFormWith(ModelMap model, Principal principal ) {
-        model.addAttribute("product", model.containsKey("product") ? model.get("product") : new Product());
+
+     private String addProductFormWith(ModelMap model, User user) {
+         model.addAttribute("user", user);
+         model.addAttribute("product", model.containsKey("product") ? model.get("product") : new Product());
+         return Page.ADD_PRODUCT;
+     }
+
+    @GetMapping("add")
+    public String showAddProductForm(ModelMap model, Principal principal) {
         User user = userService.findByEmail(principal.getName());
-        model.addAttribute("user", user);
-        return Page.ADD_PRODUCT;
+        this.user = user;
+
+        return addProductFormWith(model, user);
     }
 
-    /*@RequestMapping(path = "/addProduct", method = RequestMethod.GET)
-    public String showAddProductForm(ModelMap model,Principal principal) {
-        return addProductFormWith(model,principal);
-    }
-    
-    @RequestMapping(path = "/addProduct", method = RequestMethod.POST)
-    public String addProduct(@Valid @ModelAttribute("product") Product product, BindingResult bindingResult, ModelMap model) {
-        if(bindingResult.hasErrors()) {
-            LOGGER.error("The form has some errors");
-            return addProductFormWith(model);
+    @Transactional
+    @PostMapping("add")
+    public String addProduct(@Valid @ModelAttribute("product") Product product,
+                             BindingResult bindingResult,
+                             ModelMap model) {
+        productValidator.validate(product, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            LOGGER.error("The form has some errors.");
+            return addProductFormWith(model, null);
         } else {
-            LOGGER.info("Saving product with product name {}", product.getName());
+//            product.setStartDate(startLocalDateTime);
+//            product.setFinishDate(finishLocalDateTime);
+            product.setUser(user);
             productService.save(product);
-            return Page.PRODUCT;
-        }*/
+            LOGGER.info("PRODUCT SAVED WITH NAME: {}", product.getName());
+            LOGGER.info("START TIME: {}", product.getStartDate_());
+        }
+
+        return (bindingResult.hasErrors() ? addProductFormWith(model, null) : "redirect:/product/list");
+    }
 }
 

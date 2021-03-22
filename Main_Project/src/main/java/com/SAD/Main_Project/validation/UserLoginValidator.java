@@ -26,11 +26,18 @@ public class UserLoginValidator implements Validator {
     public void validate(Object target, Errors errors) {
         User user = (User) target;
 
+        if (userService.findByEmail(user.getEmail()) == null) {
+            errors.rejectValue("email", "user.email.notFound");
+            return;
+        }
+
         if (user.getEmail().isEmpty()) {
             errors.rejectValue("email", "input.empty");
-        } else if (userService.findByEmail(user.getEmail()) == null) {
-            errors.rejectValue("email", "user.email.notFound");
-        } else if (user.getToken() != null) {
+        }
+//        else if (userService.findByEmail(user.getEmail()) == null) {
+//            errors.rejectValue("email", "user.email.notFound");
+//        }
+        else if (user.getToken() != null) {
             if (!user.getToken().isActivated()) {
                 errors.rejectValue("email", "user.email.notConfirmed");
             }
