@@ -1,13 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-	
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml'
 	xmlns:th='http://www.thymeleaf.org'>
-<html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Result</title>
+<title>Payment Success</title>
 </head>
 <body>
 	<h3 th:if='${error}' th:text='${error}' style='color: red;'></h3>
@@ -26,6 +21,6 @@
 			Balance transaction id.: <span th:text='${balance_transaction}' />
 		</div>
 	</div>
-	<a href='/checkout.html'>Checkout again</a>
+	<a href='/checkouts.html'>Checkout again</a>
 </body>
 </html>

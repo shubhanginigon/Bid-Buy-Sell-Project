@@ -10,7 +10,7 @@ public class Page {
     public static String USER_HOME = "user_home.jsp";
     public static String CONFIRM_ACCOUNT = "confirm_account.jsp";
     public static String ACCOUNT_VERIFIED = "account_verified.jsp";
-    public static String CHECKOUT = "checkout.jsp";
-    public static String PAYMENT_SUCCESS = "paymentSuccess.jsp";
+    public static String CHECKOUTS = "checkouts.html";
+    public static String PAYMENT_SUCCESS = "paymentSuccess.html";
     public static String ERROR = "error.jsp";
 }
