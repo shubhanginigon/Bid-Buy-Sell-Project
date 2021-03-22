@@ -36,10 +36,10 @@ public class ProductController {
      * Product List
      ************/
 	
-	@RequestMapping(path = {"/bid"})
+	@RequestMapping(path = {"/"})
     public ModelAndView productList(Principal principal) {
         LOGGER.info("Showing product list...");
-        ModelAndView mv = new ModelAndView(Page.PRODUCT);
+        ModelAndView mv = new ModelAndView(Page.HOME);
 
         User user = userService.findByEmail(principal.getName());
 
@@ -53,7 +53,7 @@ public class ProductController {
             }
             else if (userRoleName.equalsIgnoreCase("ROLE_USER")){
                 // Show view with registered users privileges
-                mv = new ModelAndView(Page.PRODUCT);
+                mv = new ModelAndView(Page.USER_HOME);
                 LOGGER.info("Showing Registered User Home Page");
             }
 
@@ -66,15 +66,16 @@ public class ProductController {
      * Add Product
      ************/
 	
-	private String addProductFormWith(ModelMap model) {
+	private String addProductFormWith(ModelMap model, Principal principal ) {
         model.addAttribute("product", model.containsKey("product") ? model.get("product") : new Product());
-        //model.addAttribute("genders", Gender.values());
+        User user = userService.findByEmail(principal.getName());
+        model.addAttribute("user", user);
         return Page.ADD_PRODUCT;
     }
 
-    @RequestMapping(path = "/addProduct", method = RequestMethod.GET)
-    public String showAddProductForm(ModelMap model) {
-        return addProductFormWith(model);
+    /*@RequestMapping(path = "/addProduct", method = RequestMethod.GET)
+    public String showAddProductForm(ModelMap model,Principal principal) {
+        return addProductFormWith(model,principal);
     }
     
     @RequestMapping(path = "/addProduct", method = RequestMethod.POST)
@@ -86,8 +87,6 @@ public class ProductController {
             LOGGER.info("Saving product with product name {}", product.getName());
             productService.save(product);
             return Page.PRODUCT;
-        }
-    }
-	
-	
+        }*/
 }
+

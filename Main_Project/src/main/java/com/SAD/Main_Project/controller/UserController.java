@@ -3,6 +3,7 @@ package com.SAD.Main_Project.controller;
 import com.SAD.Main_Project.helpers.Page;
 import com.SAD.Main_Project.model.Gender;
 import com.SAD.Main_Project.model.User;
+import com.SAD.Main_Project.service.ProductService;
 import com.SAD.Main_Project.service.UserService;
 import com.SAD.Main_Project.validation.UserLoginValidator;
 import com.SAD.Main_Project.validation.UserValidator;
@@ -29,6 +30,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private ProductService productService;
 
     @Autowired
     private UserValidator userValidator;
@@ -42,12 +46,13 @@ public class UserController {
      ************/
     @RequestMapping(path = {"/home", "/"})
     public ModelAndView homePage(Principal principal) {
+    	ModelAndView mv;
         LOGGER.info("Showing Home Page...");
-        ModelAndView mv = new ModelAndView(Page.HOME);
-
         // Initially principal doesn't know which user is logged in or which is not
         if (principal == null) {
             LOGGER.info("Principal is null, showing home for unregistered users.");
+            mv = new ModelAndView(Page.HOME);
+            mv.addObject("products", productService.findAll()); 
             return mv;
         }
 
@@ -65,6 +70,10 @@ public class UserController {
                 // Show view with registered users privileges
                 mv = new ModelAndView(Page.USER_HOME);
                 LOGGER.info("Showing Registered User Home Page");
+                mv.addObject("products", productService.findAll()); 
+            } else {
+            	mv = new ModelAndView();
+            	LOGGER.error("UNKNOWN USER ROLE");
             }
 
             mv.addObject("user", user);
