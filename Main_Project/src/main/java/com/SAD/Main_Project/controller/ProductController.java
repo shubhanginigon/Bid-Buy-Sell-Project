@@ -36,7 +36,7 @@ public class ProductController {
      * Product List
      ************/
 	
-	@RequestMapping(path = {"/"})
+	@RequestMapping(path = {"/bid"})
     public ModelAndView productList(Principal principal) {
         LOGGER.info("Showing product list...");
         ModelAndView mv = new ModelAndView(Page.HOME);
