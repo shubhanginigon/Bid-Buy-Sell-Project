@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="icon" type="image/png" href="/Progress Project Presentation/logo.ico" >
+
     <meta charset="utf-8"/>
     <meta
             name="viewport"
