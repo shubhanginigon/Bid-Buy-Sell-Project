@@ -22,6 +22,8 @@ If the product is being bided by someone, there will be multiple users who will 
 
 ![alt](/Architectural%20Design%20Documents%20(After%20Mid%20Term)/BBS%20Sequence%20Diagram%20V2.png)
 
+Above sequence diagram is for the use case 'Bid on product'. Here we have shown two actors as client 1 and client 2 and bidController, server, bidRepo and bid(Entity) as the object for the sequence diagram. As shown in the sequence, when client 1 and client 2 both request to update the bid amount simultaneously the timestamp taken here will be till nanosecond to diminesh the possibility of clicking the bid at the same time. Once, the request is send to the server, it will use locking to lock object and further proceed to updatet he bid entity. When the request from the second actor client 2 is sent to the server, say after 1 nanosecond, it will create another thread for the request and try to request the lock object, but since the thread 1 is already using it thread 2 will be sent to wait state until the lock is released by thread 1. After that, thread 2 will proceed to update the bid, and bid will be updated if the value is more than the latest bid amount. 
+
 >## Architectural Design
 
 ![alt](/Architectural%20Design%20Documents%20(After%20Mid%20Term)/Architectural%20Design.png)
