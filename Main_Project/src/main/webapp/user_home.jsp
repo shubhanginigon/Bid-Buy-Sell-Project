@@ -74,8 +74,12 @@
                                 <div class="gift__quantity-left"><span>Bid ends on: </span><span class="gift__data">${product.finishDate}</span>
                                 </div>
                             </div>
-                            <div class="gift__cta-wrap col-12 col-sm-6"><a class="btn btn-info" target="_blank" href="#">BID</a><br><span
-                                    class="gift__cta-note">12 people currently bidding</span></div>
+                            <div class="gift__cta-wrap col-12 col-sm-6">
+                            <span class="gift__cta-note"> Bid started at price: THB ${product.price}</span><br>
+                            <label for="customRange3" class="form-label">Bidding Amount</label><br>
+							<input type="range" class="form-range" min="${product.price}" max="1000000" step="100" id="customRange3">
+                            <a class="btn btn-info" target="_blank" href="#">BID</a><br>
+                            <span class="gift__cta-note">12 people currently bidding</span></div>
                         </div>
                     </div>
                 </div>
