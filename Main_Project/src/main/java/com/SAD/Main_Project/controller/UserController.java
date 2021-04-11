@@ -3,6 +3,7 @@ package com.SAD.Main_Project.controller;
 import com.SAD.Main_Project.helpers.Page;
 import com.SAD.Main_Project.model.Gender;
 import com.SAD.Main_Project.model.User;
+import com.SAD.Main_Project.service.BidService;
 import com.SAD.Main_Project.service.ProductService;
 import com.SAD.Main_Project.service.UserService;
 import com.SAD.Main_Project.validation.UserLoginValidator;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,6 +35,9 @@ public class UserController {
     
     @Autowired
     private ProductService productService;
+    
+    @Autowired
+    private BidService bidService;
 
     @Autowired
     private UserValidator userValidator;
@@ -70,7 +75,8 @@ public class UserController {
                 // Show view with registered users privileges
                 mv = new ModelAndView(Page.USER_HOME);
                 LOGGER.info("Showing Registered User Home Page");
-                mv.addObject("products", productService.findAll()); 
+                mv.addObject("products", productService.findAll());
+                
             } else {
             	mv = new ModelAndView();
             	LOGGER.error("UNKNOWN USER ROLE");
@@ -82,6 +88,12 @@ public class UserController {
             mv = showErrorPageWithMessage("Your email is not confirmed yet.");
         }
         return mv;
+    }
+    
+    @PostMapping
+    private String addBid(ModelMap model)
+    {
+    	return null;
     }
 
     /********************

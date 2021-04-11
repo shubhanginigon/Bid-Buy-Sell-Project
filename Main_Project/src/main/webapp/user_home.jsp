@@ -76,9 +76,17 @@
                             </div>
                             <div class="gift__cta-wrap col-12 col-sm-6">
                             <span class="gift__cta-note"> Bid started at price: THB ${product.price}</span><br>
-                            <label for="customRange3" class="form-label">Bidding Amount</label><br>
-							<input type="range" class="form-range" min="${product.price}" max="1000000" step="100" id="customRange3">
-                            <a class="btn btn-info" target="_blank" href="#">BID</a><br>
+                            <label> Enter Bid Amount</label>
+                            <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">$</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+  <div class="input-group-append">
+    <span class="input-group-text">.00</span>
+  </div>
+</div>
+                            <button class="btn btn-info" type="submit" action="/home" method="post">BID</button><br>
                             <span class="gift__cta-note">12 people currently bidding</span></div>
                         </div>
                     </div>
