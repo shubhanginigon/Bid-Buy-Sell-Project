@@ -47,4 +47,7 @@ public class Product {
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonIgnore
     private User user;
+    
+    @OneToOne(mappedBy="product")
+    private Bid bid;
 }

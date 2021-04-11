@@ -32,7 +32,7 @@
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="nav navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/home">Home</a>
+                    <a class="nav-link" href="/home">Home</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="#">Rules</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Tutorials</a></li>
