@@ -13,12 +13,16 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Builder
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Bid {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +36,7 @@ public class Bid {
     private Set<User> user;
 
     @Column(nullable = false)
-    @NotBlank(message = "Enter the bid value.")
+//    @NotBlank(message = "Enter the bid value.")
     private double price;
 
     private String status;
