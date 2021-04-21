@@ -56,19 +56,19 @@ Progression table:
 | 4.2.	 Home page, login form, registration form | Done |
 | 4.3.	 Email functionality with authentication and authorization| Done |
 | 4.4.	 Product model 	 | Done |
-| 4.5.	 Bidding model| progress |
+| 4.5.	 Bidding model| Done |
 | 5.	Testing 	 |  |
-| 5.1.	 Unit testing 	 |  |
-| 5.2.	 Integration testing 	 |  |
-| 5.3.	 Performance testing	 |  |
-| 5.4.	 Stress testing 	 |  |
-| 5.5.	 Acceptance testing	 |  |
-| 5.6.	 Testing Documentation	 |  |
-| 5.7.	 Update Scientific report	 |  |
-| 6.	Documentation 	 |  |
+| 5.1.	 Unit testing 	 | progress |
+| 5.2.	 Integration testing 	 | progress |
+| 5.3.	 Performance testing	 | progress |
+| 5.4.	 Stress testing 	 | progress |
+| 5.5.	 Acceptance testing	 | progress |
+| 5.6.	 Testing Documentation	 | progress |
+| 5.7.	 Update Scientific report	 | progress |
+| 6.	Documentation 	 | progress |
 | 6.1.	 Presentation slide	  |  |
 | 6.2.	 Final Scientific report	 | progress |
-| 6.3.	 All updated Requirement, Design, Testing documents	 |  |
+| 6.3.	 All updated Requirement, Design, Testing documents	 | progress |
 
 #### _`**Project logo design to go green without throwing second hand product**`_
 ![alt](logo.png)

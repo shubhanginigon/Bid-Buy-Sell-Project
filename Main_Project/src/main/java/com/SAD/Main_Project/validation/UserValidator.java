@@ -14,6 +14,9 @@ public class UserValidator implements Validator {
     @Autowired
     UserService userService;
 
+    private static final int MIN_PASSWORD_LENGTH = 5;
+    private static final int MAX_PASSWORD_LENGTH = 32;
+
     @Override
     public boolean supports(Class<?> clazz) {
         return User.class.equals(clazz);
@@ -36,7 +39,7 @@ public class UserValidator implements Validator {
         }
 
         // Rejects if length of password is less than 8 and more than 32
-        if (user.getPassword().length() < 8 || user.getPassword().length() > 32) {
+        if (user.getPassword().length() < MIN_PASSWORD_LENGTH || user.getPassword().length() > MAX_PASSWORD_LENGTH) {
             errors.rejectValue("password", "user.password.size");
         }
 

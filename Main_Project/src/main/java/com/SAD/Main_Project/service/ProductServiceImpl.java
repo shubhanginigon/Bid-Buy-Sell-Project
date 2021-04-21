@@ -1,5 +1,6 @@
 package com.SAD.Main_Project.service;
 
+import java.util.Collections;
 import java.util.List;
 
 import com.SAD.Main_Project.helpers.DateConverter;
@@ -44,8 +45,8 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public List<Product> findAll() {
-		return productRepo.findAll();
+		List<Product> products = productRepo.findAll();
+		Collections.reverse(products);
+		return products;
 	}
-	
-
 }
