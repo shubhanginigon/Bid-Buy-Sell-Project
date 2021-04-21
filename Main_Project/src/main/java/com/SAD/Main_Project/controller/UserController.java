@@ -1,8 +1,11 @@
 package com.SAD.Main_Project.controller;
 
 import com.SAD.Main_Project.helpers.Page;
+import com.SAD.Main_Project.model.Bid;
 import com.SAD.Main_Project.model.Gender;
+import com.SAD.Main_Project.model.Product;
 import com.SAD.Main_Project.model.User;
+import com.SAD.Main_Project.service.BidService;
 import com.SAD.Main_Project.service.ProductService;
 import com.SAD.Main_Project.service.UserService;
 import com.SAD.Main_Project.validation.UserLoginValidator;
@@ -13,10 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.transaction.Transactional;
@@ -33,6 +33,9 @@ public class UserController {
     
     @Autowired
     private ProductService productService;
+    
+    @Autowired
+    private BidService bidService;
 
     @Autowired
     private UserValidator userValidator;
@@ -70,7 +73,8 @@ public class UserController {
                 // Show view with registered users privileges
                 mv = new ModelAndView(Page.USER_HOME);
                 LOGGER.info("Showing Registered User Home Page");
-                mv.addObject("products", productService.findAll()); 
+                mv.addObject("products", productService.findAll());
+                
             } else {
             	mv = new ModelAndView();
             	LOGGER.error("UNKNOWN USER ROLE");
@@ -82,6 +86,19 @@ public class UserController {
             mv = showErrorPageWithMessage("Your email is not confirmed yet.");
         }
         return mv;
+    }
+    
+    @PostMapping("/bid")
+    private String addBid(@Valid @ModelAttribute("bid") Bid bid,
+                          @RequestParam("product_id") int pid,
+                          ModelMap model)
+    {
+
+        //Product p = productService.findById(pid);
+
+        LOGGER.info("PRODUCT ID: {}", pid);
+        LOGGER.info("PRICE: " + bid.getPrice());
+    	return "redirect:/";
     }
 
     /********************

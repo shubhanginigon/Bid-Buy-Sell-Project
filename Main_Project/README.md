@@ -19,17 +19,17 @@ In this, we have all the code files for our project:  _“E-commerce website to 
 | 2.4.	 One series of mockups for one use case.  | Done|
 | 2.5.	 Risk and mitigation plan | Done |
 | 2.6.	 Software requirements document.	 | Done |
-| 3.	Architectural Design | progress |
-| 3.1.	 Design analysis | progress |
-| 3.2.	 Final Use-case diagrams, class-diagrams, sequence diagrams, deployment diagrams	 | progress |
-| 3.3.	 Literature review (RELATED WORK)	 | progress |
-| 3.4.	 Draft Scientific report	| progress |
-| 4.	Implementation 	 | progress |
+| 3.	Architectural Design |  |
+| 3.1.	 Design analysis | Done |
+| 3.2.	 Final Use-case diagrams, class-diagrams, sequence diagrams, deployment diagrams	 | Done |
+| 3.3.	 Literature review (RELATED WORK)	 | Done |
+| 3.4.	 Draft Scientific report	| Done |
+| 4.	Implementation 	 |  |
 | 4.1.	 Code design patterns |  Done |
 | 4.2.	 Home page, login form, registration form | Done |
 | 4.3.	 Email functionality with authentication and authorization| Done |
-| 4.4.	 Product model 	 | progress |
-| 4.5.	 Bidding model|  |
+| 4.4.	 Product model 	 | Done |
+| 4.5.	 Bidding model| progress |
 | 5.	Testing 	 |  |
 | 5.1.	 Unit testing 	 |  |
 | 5.2.	 Integration testing 	 |  |
@@ -40,8 +40,9 @@ In this, we have all the code files for our project:  _“E-commerce website to 
 | 5.7.	 Update Scientific report	 |  |
 | 6.	Documentation 	 |  |
 | 6.1.	 Presentation slide	  |  |
-| 6.2.	 Final Scientific report	 |  |
+| 6.2.	 Final Scientific report	 | progress |
 | 6.3.	 All updated Requirement, Design, Testing documents	 |  |
+
 
 > For the Design patterns, we have implemented as follows:
 1. Builder
@@ -54,5 +55,6 @@ In this, we have all the code files for our project:  _“E-commerce website to 
 
 The details of pattern is given each package that we have created and might change or add more depending on the requirements.
 
-To understand more about our project please follow the folder: "Mockups and Project Topic Requirements Documents".
+To understand more about our project please follow the folder: "Mockups and Project Topic Requirements Documents" or https://github.com/shubhanginigon/Bid-Buy-Sell-Project/tree/main/Architectural%20Design%20Documents%20(After%20Mid%20Term)
+
 

@@ -12,4 +12,3 @@ First the product will be just shown to customer for viewing purpose. (using upC
 Secondly, the product will be available for customer for biding it once login. (using onGoingPost)
 
 Finally, the product will be not shown in interface after the event time is over. (using completedPost)
-

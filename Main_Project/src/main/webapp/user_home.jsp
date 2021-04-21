@@ -69,13 +69,33 @@
                                 <div class="gift__normal-price"></div>
                                 <div class="gift__today-price"><span>Current Price: </span><span
                                         class="gift__data">THB ${product.price}</span></div>
-                                <div class="gift__quantity-left"><span>Bid starts on: </span><span class="gift__data">${product.startDate}</span>
+                                <div class="gift__quantity-left"><span>Bid starts on: </span><span
+                                        class="gift__data">${product.startDate}</span>
                                 </div>
-                                <div class="gift__quantity-left"><span>Bid ends on: </span><span class="gift__data">${product.finishDate}</span>
+                                <div class="gift__quantity-left"><span>Bid ends on: </span><span
+                                        class="gift__data">${product.finishDate}</span>
                                 </div>
                             </div>
-                            <div class="gift__cta-wrap col-12 col-sm-6"><a class="btn btn-info" target="_blank" href="#">BID</a><br><span
-                                    class="gift__cta-note">12 people currently bidding</span></div>
+                            <div class="gift__cta-wrap col-12 col-sm-6">
+                                <span class="gift__cta-note"> Bid started at price: THB ${product.price}</span><br>
+                                <label> Enter Bid Amount</label>
+                                <form method="post" action="/bid" modelAttribute="bid">
+                                    <input type="hidden" name="product_id" value="${product.pid}">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="price">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">.00</span>
+                                        </div>
+                                    </div>
+                                    <input class="btn btn-primary" type="submit">
+<%--                                    <button class="btn btn-info" type="submit" action="/bid" method="post">BID</button>--%>
+                                    <br>
+                                </form>
+
+                                <span class="gift__cta-note">12 people currently bidding</span></div>
                         </div>
                     </div>
                 </div>

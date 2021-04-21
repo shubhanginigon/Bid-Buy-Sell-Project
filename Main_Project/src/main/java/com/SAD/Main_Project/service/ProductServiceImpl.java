@@ -49,6 +49,4 @@ public class ProductServiceImpl implements ProductService {
 		Collections.reverse(products);
 		return products;
 	}
-	
-
 }
