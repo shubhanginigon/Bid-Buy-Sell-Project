@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.1 (Python 3.9.4 on win32)" generated="20210421 21:45:01.157" rpa="false" schemaversion="2">
+<suite id="s1" name="BBS" source="C:\Users\Younten Tshering\Desktop\Bid-Buy-Sell-Project\Main_Project\BBS.robot">
+<test id="s1-t1" name="1. Open Website">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${url}</arg>
+<arg>${Browser}</arg>
+<arg>options=add_experimental_option("excludeSwitches", ["enable-logging"])</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210421 21:45:01.384" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210421 21:45:01.383" endtime="20210421 21:45:02.926"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210421 21:45:02.927" endtime="20210421 21:45:03.058"/>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<arg>0.3</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20210421 21:45:03.059" endtime="20210421 21:45:03.059"/>
+</kw>
+<status status="PASS" starttime="20210421 21:45:01.382" endtime="20210421 21:45:03.060"/>
+</test>
+<test id="s1-t2" name="2. Input username and password">
+<kw name="Input Text" library="Selenium2Library">
+<arg>name=email</arg>
+<arg>yountentshering@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210421 21:45:03.063" level="INFO">Typing text 'yountentshering@gmail.com' into text field 'name=email'.</msg>
+<status status="PASS" starttime="20210421 21:45:03.063" endtime="20210421 21:45:04.089"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name=password</arg>
+<arg>12345678</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210421 21:45:04.091" level="INFO">Typing text '12345678' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20210421 21:45:04.090" endtime="20210421 21:45:05.115"/>
+</kw>
+<status status="PASS" starttime="20210421 21:45:03.062" endtime="20210421 21:45:05.116"/>
+</test>
+<test id="s1-t3" name="3. Login">
+<kw name="Click Button" library="Selenium2Library">
+<arg>name=submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210421 21:45:05.119" level="INFO">Clicking button 'name=submit'.</msg>
+<status status="PASS" starttime="20210421 21:45:05.118" endtime="20210421 21:45:06.929"/>
+</kw>
+<status status="PASS" starttime="20210421 21:45:05.118" endtime="20210421 21:45:06.930"/>
+</test>
+<test id="s1-t4" name="4. Check page info">
+<status status="FAIL" starttime="20210421 21:45:06.932" endtime="20210421 21:45:06.933">Test case contains no keywords.</status>
+</test>
+<test id="s1-t5" name="5. close Browser">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210421 21:45:06.936" endtime="20210421 21:45:09.325"/>
+</kw>
+<status status="PASS" starttime="20210421 21:45:06.935" endtime="20210421 21:45:09.326"/>
+</test>
+<status status="FAIL" starttime="20210421 21:45:01.159" endtime="20210421 21:45:09.328"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="1" skip="0" id="s1" name="BBS">BBS</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
