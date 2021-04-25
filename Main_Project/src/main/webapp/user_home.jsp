@@ -45,68 +45,68 @@
         </div>
     </div>
 </nav>
-<div class="team-boxed">
+<div class="content">
     <div class="container">
-        <div class="row">
-            <form action="/product/add" method="get">
-                <input type="submit" class="btn btn-info" value="Add New Product"/>
-            </form>
-        </div>
+        <a href="/product/add" class="btn btn-info">Add New Product</a>
+        <a href="/product/list" class="btn btn-info">My Products</a>
 
         <div class="row product-list">
 
             <c:forEach items="${products}" var="product">
-                <div class="gift row col-12 product-list-item">
-                    <div class="gift__img col-sm-3 col-12">
-                        <img class="product-img" src="assets/img/gift_01.jpg" alt="product image"/></div>
-                    <div class="gift__info col-sm-9 col-12">
-                        <h4 class="gift__name">${product.name}</h4>
-                        <div class="gift__details">
-                            <p>${product.description}</p>
+                <div class="row product-row">
+                    <div class="col-3">
+                        <div>
+                            <img class="product-img" src="assets/img/placeholder_image.jpg" alt="">
                         </div>
-                        <div class="gift__bottom row">
-                            <div class="gift__price-wrap col-12 col-sm-6">
-                                <div class="gift__normal-price"></div>
-                                <div class="gift__today-price"><span>Current Price: </span><span
-                                        class="gift__data">THB ${product.price}</span></div>
-                                <div class="gift__quantity-left"><span>Bid starts on: </span><span
-                                        class="gift__data">${product.startDate}</span>
-                                </div>
-                                <div class="gift__quantity-left"><span>Bid ends on: </span><span
-                                        class="gift__data">${product.finishDate}</span>
-                                </div>
-                            </div>
-                            <div class="gift__cta-wrap col-12 col-sm-6">
-                                <span class="gift__cta-note"> Bid started at price: THB ${product.price}</span><br>
-                                <label> Enter Bid Amount</label>
-                                <form method="post" action="/bid" modelAttribute="bid">
-                                    <input type="hidden" name="product_id" value="${product.pid}">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">$</span>
-                                        </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="price">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">.00</span>
-                                        </div>
-                                    </div>
-                                    <input class="btn btn-primary" type="submit">
-<%--                                    <button class="btn btn-info" type="submit" action="/bid" method="post">BID</button>--%>
-                                    <br>
-                                </form>
-
-                                <span class="gift__cta-note">12 people currently bidding</span></div>
+                    </div>
+                    <div class="col-7">
+                        <h3>${product.name}</h3>
+                        <p class="text-secondary">${product.description}</p>
+                        <p><strong>Starting Price:</strong>${product.price}</p>
+                        <p><strong>Bid Start Date:</strong>${product.startDate}</p>
+                        <p><strong>Bid End Date:</strong>${product.finishDate}</p>
+                    </div>
+                    <div class="col-2">
+                        <div class="bid-button">
+                            <a href="/bid/${product.pid}" class="btn btn-info btn-lg">Bid Now</a>
                         </div>
                     </div>
                 </div>
             </c:forEach>
 
-
         </div>
 
     </div>
 </div>
+<%--<script>--%>
+<%--    // Get the modal--%>
+<%--    var modal = document.getElementById("bidModal");--%>
+
+<%--    // Get the button that opens the modal--%>
+<%--    var btn = document.getElementById("bidBtn");--%>
+
+<%--    // Get the <span> element that closes the modal--%>
+<%--    var span = document.getElementsByClassName("close")[0];--%>
+
+<%--    // When the user clicks the button, open the modal--%>
+<%--    btn.onclick = function () {--%>
+<%--        modal.style.display = "block";--%>
+<%--    }--%>
+
+<%--    // When the user clicks on <span> (x), close the modal--%>
+<%--    span.onclick = function () {--%>
+<%--        modal.style.display = "none";--%>
+<%--    }--%>
+
+<%--    // When the user clicks anywhere outside of the modal, close it--%>
+<%--    window.onclick = function (event) {--%>
+<%--        if (event.target === modal) {--%>
+<%--            modal.style.display = "none";--%>
+<%--        }--%>
+<%--    }--%>
+<%--</script>--%>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 </html>

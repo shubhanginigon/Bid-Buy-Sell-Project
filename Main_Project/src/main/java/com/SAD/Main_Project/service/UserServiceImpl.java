@@ -1,5 +1,6 @@
 package com.SAD.Main_Project.service;
 
+import com.SAD.Main_Project.model.Product;
 import com.SAD.Main_Project.repo.UserRepo;
 import com.SAD.Main_Project.facade.EmailFacade;
 import com.SAD.Main_Project.model.ConfirmationToken;
@@ -13,6 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -89,4 +91,5 @@ public class UserServiceImpl implements UserService {
         LOGGER.error("CTOKEN NOT FOUND IN DATABASE !!!");
         return false;
     }
+
 }
