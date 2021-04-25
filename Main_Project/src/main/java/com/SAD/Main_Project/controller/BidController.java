@@ -47,13 +47,28 @@ public class BidController {
         return Page.BID;
     }
 
-    @PostMapping("/")
-    public String placeBid(@ModelAttribute("bid") Bid bid, ModelMap model) {
-        System.out.println(bid.toString());
-        LOGGER.info(bid.toString());;
-        LOGGER.info(bid.getStatus());
+    @PostMapping
+    public String placeBid(@RequestParam("product_id") int productId,
+                           @ModelAttribute("bid") Bid bid,
+                           ModelMap model,
+                           Principal principal) {
+//        System.out.println(bid.toString());
+//        LOGGER.info(bid.toString());;
+//        LOGGER.info(bid.getStatus());
 
-        bidService.save(bid);
+        Product product = productService.findById(productId);
+        User user = userService.findByEmail(principal.getName());
+
+        // Build Bid
+        Bid newBid = Bid.builder()
+                .bidId(productId)
+                .product(product)
+                .user(user)
+                .price(bid.getPrice())
+                .status(bid.getStatus())
+                .build();
+
+        bidService.save(newBid);
 
         return "redirect:/";
     }

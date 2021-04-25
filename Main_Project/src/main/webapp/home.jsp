@@ -49,37 +49,6 @@
         <div class="row">
 
             <c:forEach items="${products}" var="product">
-<%--                <div class="gift row col-12 product-list-item">--%>
-<%--                    <div class="gift__img col-sm-3 col-12">--%>
-<%--                        <img class="product-img" src="assets/img/placeholder_image.jpg"--%>
-<%--                             alt="product image"/>--%>
-<%--                    </div>--%>
-<%--                    <div class="gift__info col-sm-9 col-12">--%>
-<%--                        <h4 class="gift__name">${product.name}</h4>--%>
-<%--                        <div class="gift__details">--%>
-<%--                            <p>${product.description}</p>--%>
-<%--                        </div>--%>
-<%--                        <div class="gift__bottom row">--%>
-<%--                            <div class="gift__price-wrap col-12 col-sm-6">--%>
-<%--                                <div class="gift__normal-price"></div>--%>
-<%--                                <div class="gift__today-price">--%>
-<%--                                    <span>Current Price: </span><span class="gift__data">THB--%>
-<%--                                        ${product.price}</span>--%>
-<%--                                </div>--%>
-<%--                                <div class="gift__quantity-left">--%>
-<%--                                    <span>Bid starts on: </span><span class="gift__data">${product.startDate}</span>--%>
-<%--                                </div>--%>
-<%--                                <div class="gift__quantity-left">--%>
-<%--                                    <span>Bid ends on: </span><span class="gift__data">${product.finishDate}</span>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                            <div class="gift__cta-wrap col-12 col-sm-6">--%>
-<%--                                <a class="btn btn-info" target="_self" href="/login">BID</a><br>--%>
-<%--                                <span class="gift__cta-note">12 people currently bidding</span>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
                 <div class="row product-row">
                     <div class="col-3">
                         <div>

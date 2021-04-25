@@ -2,17 +2,10 @@ package com.SAD.Main_Project.model;
 
 import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,14 +19,17 @@ import lombok.NoArgsConstructor;
 public class Bid {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int bid;
+    private int bidId;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "product_id", referencedColumnName = "bid_id")
+    @JsonIgnore
+    @MapsId
     private Product product;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "bid_id", referencedColumnName = "bid")
-    private Set<User> user;
+    @ManyToOne(fetch = FetchType.LAZY)
+    //@JoinColumn(name = "bid_id", referencedColumnName = "bid")
+    private User user;
 
     @Column(nullable = false)
 //    @NotBlank(message = "Enter the bid value.")

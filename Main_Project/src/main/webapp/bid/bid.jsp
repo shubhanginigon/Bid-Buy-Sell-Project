@@ -58,7 +58,7 @@
             </div>
             <%--                                    <span class="close">&times;</span>--%>
             <div class="modal-body">
-              <p>Product ID: ${product.pid}</p>
+              <p>Product ID: ${product.productId}</p>
               <p>Product Name: ${product.name}</p>
               <p>Starting Price: ${product.price}</p>
               <form action="/bid" method="post" modelAttribute="bid">
@@ -67,13 +67,13 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text">$</span>
                     </div>
-                    <input type="text" name="price" class="form-control" aria-label="Amount (to the nearest dollar)" required aria-valuemin="${product.price}">
+                    <input type="text" name="price" class="form-control" aria-label="Amount (to the nearest dollar)" required min="${product.price}">
                     <div class="input-group-append">
                       <span class="input-group-text">.00</span>
                     </div>
                   </div>
                   <input name="status" value="Ongoing" hidden>
-                  <input name="product_id" value="${product.pid}" hidden>
+                  <input name="product_id" value="${product.productId}" hidden>
                   <div class="mb-3">
                     <input type="submit" class="btn btn-info btn-lg" value="Bid">
                   </div>

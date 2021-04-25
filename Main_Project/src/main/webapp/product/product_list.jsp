@@ -61,7 +61,7 @@
                     <tbody>
                     <c:forEach items="${products}" var="product">
                         <tr class="table-default">
-                            <th scope="row">${product.pid}</th>
+                            <th scope="row">${product.productId}</th>
                             <td>${product.name}</td>
                             <td>${product.price}</td>
                             <td>Current Bid Price</td>

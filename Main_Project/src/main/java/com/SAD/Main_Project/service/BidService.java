@@ -4,7 +4,7 @@ import com.SAD.Main_Project.model.Bid;
 
 public interface BidService {
 	
-	Bid findByBid(int bid_id);
+	Bid findByBidId(int bid_id);
 	
 	void save(Bid bid);
 }

@@ -5,20 +5,18 @@ import java.time.LocalDateTime;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Builder
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int pid;
+    private int productId;
 
     @Column(nullable = false)
     //@NotBlank(message = "This field is required.")
@@ -48,6 +46,6 @@ public class Product {
     @JsonIgnore
     private User user;
     
-    @OneToOne(mappedBy="product")
+    @OneToOne(mappedBy="product", cascade = CascadeType.ALL, orphanRemoval = true)
     private Bid bid;
 }
