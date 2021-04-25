@@ -88,18 +88,18 @@ public class UserController {
         return mv;
     }
     
-    @PostMapping("/bid")
-    private String addBid(@Valid @ModelAttribute("bid") Bid bid,
-                          @RequestParam("product_id") int pid,
-                          ModelMap model)
-    {
-
-        //Product p = productService.findById(pid);
-
-        LOGGER.info("PRODUCT ID: {}", pid);
-        LOGGER.info("PRICE: " + bid.getPrice());
-    	return "redirect:/";
-    }
+//    @PostMapping("/bid")
+//    private String addBid(@Valid @ModelAttribute("bid") Bid bid,
+//                          @RequestParam("product_id") int pid,
+//                          ModelMap model)
+//    {
+//
+//        //Product p = productService.findById(pid);
+//
+//        LOGGER.info("PRODUCT ID: {}", pid);
+//        LOGGER.info("PRICE: " + bid.getPrice());
+//    	return "redirect:/";
+//    }
 
     /********************
     * USER REGISTRATION

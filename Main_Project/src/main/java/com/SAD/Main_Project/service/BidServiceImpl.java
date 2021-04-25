@@ -17,8 +17,8 @@ public class BidServiceImpl implements BidService {
 	BidRepo bidRepo;
 
 	@Override
-	public Bid findByBid(int bid_id) {
-		return bidRepo.findByBid(bid_id);
+	public Bid findByBidId(int bid_id) {
+		return bidRepo.findByBidId(bid_id);
 	}
 
 	@Override

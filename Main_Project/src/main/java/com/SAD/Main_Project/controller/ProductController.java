@@ -1,6 +1,8 @@
 package com.SAD.Main_Project.controller;
 
 import java.security.Principal;
+import java.util.List;
+import java.util.Set;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -75,6 +77,17 @@ public class ProductController {
         }
 
         return (bindingResult.hasErrors() ? addProductFormWith(model, null) : "redirect:/product/list");
+    }
+
+    @GetMapping("/list")
+    public String showUserProductList(ModelMap model, Principal principal) {
+
+         User user = userService.findByEmail(principal.getName());
+
+        Set<Product> userProducts = user.getProducts();
+        model.addAttribute("user", user);
+        model.addAttribute("products", userProducts);
+        return Page.PRODUCT_LIST;
     }
 }
 
