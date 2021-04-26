@@ -79,3 +79,10 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Bid Price input validation */
+
+
+input#bid-price:invalid {
+    border: solid 2px red;
+}

@@ -67,7 +67,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text">$</span>
                     </div>
-                    <input type="text" name="price" class="form-control" aria-label="Amount (to the nearest dollar)" required min="${product.price}">
+                    <input id="bid-price" type="text" name="price" class="form-control" aria-label="Amount (to the nearest dollar)" required min="${product.bid.price}">
                     <div class="input-group-append">
                       <span class="input-group-text">.00</span>
                     </div>

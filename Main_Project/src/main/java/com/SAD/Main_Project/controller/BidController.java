@@ -54,35 +54,11 @@ public class BidController {
                            @ModelAttribute("bid") Bid bid,
                            ModelMap model,
                            Principal principal) {
-//        System.out.println(bid.toString());
-//        LOGGER.info(bid.toString());;
-//        LOGGER.info(bid.getStatus());
 
         Product product = productService.findById(productId);
         User user = userService.findByEmail(principal.getName());
 
-        Bid newBid;
-
-        if (product.getBid() == null) {
-            // Build Bid and attach with product
-            newBid = Bid.builder()
-                    .bidId(productId)
-                    .product(product)
-                    .user(user)
-                    .price(bid.getPrice())
-                    .status(bid.getStatus())
-                    .build();
-
-
-        } else {
-            // Build Bid
-            newBid = product.getBid();
-            newBid.setPrice(bid.getPrice());
-            newBid.setUser(user);
-        }
-        bidService.save(newBid);
-
-
+        bidService.save(bid, product, user);
         return "redirect:/";
     }
 }
