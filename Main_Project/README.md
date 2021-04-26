@@ -29,19 +29,19 @@ In this, we have all the code files for our project:  _“E-commerce website to 
 | 4.2.	 Home page, login form, registration form | Done |
 | 4.3.	 Email functionality with authentication and authorization| Done |
 | 4.4.	 Product model 	 | Done |
-| 4.5.	 Bidding model| progress |
+| 4.5.	 Bidding model| Done |
 | 5.	Testing 	 |  |
-| 5.1.	 Unit testing 	 |  |
+| 5.1.	 Unit testing 	 | Done |
 | 5.2.	 Integration testing 	 |  |
-| 5.3.	 Performance testing	 |  |
-| 5.4.	 Stress testing 	 |  |
+| 5.3.	 Performance testing	 | Done |
+| 5.4.	 Stress testing 	 | Done |
 | 5.5.	 Acceptance testing	 |  |
-| 5.6.	 Testing Documentation	 |  |
-| 5.7.	 Update Scientific report	 |  |
+| 5.6.	 Testing Documentation	 | Done |
+| 5.7.	 Update Scientific report	 | Done |
 | 6.	Documentation 	 |  |
-| 6.1.	 Presentation slide	  |  |
-| 6.2.	 Final Scientific report	 | progress |
-| 6.3.	 All updated Requirement, Design, Testing documents	 |  |
+| 6.1.	 Presentation slide	  | Done |
+| 6.2.	 Final Scientific report	 | Done |
+| 6.3.	 All updated Requirement, Design, Testing documents	 | Done |
 
 
 > For the Design patterns, we have implemented as follows:
@@ -55,6 +55,5 @@ In this, we have all the code files for our project:  _“E-commerce website to 
 
 The details of pattern is given each package that we have created and might change or add more depending on the requirements.
 
-To understand more about our project please follow the folder: "Mockups and Project Topic Requirements Documents" or https://github.com/shubhanginigon/Bid-Buy-Sell-Project/tree/main/Architectural%20Design%20Documents%20(After%20Mid%20Term)
-
+To understand more about our project please follow the folder: "Mockups and Project Topic Requirements Documents" or https://github.com/shubhanginigon/Bid-Buy-Sell-Project/tree/main/Related%20Documents
 

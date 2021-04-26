@@ -19,7 +19,8 @@ ${delay}  1
    Click Button  name=submit
 4. Check page info
    
-
+5. logout
+   Click Link    //a[contains(text(),'Log Out')]
 5. close Browser
    Close Browser
 
