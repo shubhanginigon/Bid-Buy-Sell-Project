@@ -19,8 +19,14 @@ public class MainProjectApplication {
 
 	@Bean
 	public ApplicationRunner initializer(RoleRepo roleRepo) {
-		return args -> roleRepo.saveAll(Arrays.asList(Role.builder().id(1).name("ROLE_ADMIN").build(),
-				Role.builder().id(2).name("ROLE_USER").build()));
+		return args -> roleRepo.saveAll(
+				Arrays.asList(
+						Role.builder().id(1).name("ROLE_ADMIN").build(),
+						Role.builder().id(2).name("ROLE_USER").build()
+				)
+		);
 	}
+
+
 
 }

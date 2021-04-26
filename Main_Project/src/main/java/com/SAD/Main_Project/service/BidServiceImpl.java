@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.SAD.Main_Project.model.Bid;
 import com.SAD.Main_Project.repo.BidRepo;
 
+import javax.persistence.OptimisticLockException;
+
 @Service
 public class BidServiceImpl implements BidService {
 
@@ -46,7 +48,22 @@ public class BidServiceImpl implements BidService {
 		}
 
 		LOGGER.info("BID DETAILS: {}", newBid);
-		bidRepo.save(newBid);
+
+		// Check for Optimistic Locking
+
+		try {
+			bidRepo.save(newBid);
+			LOGGER.info("BID SUCCESSFUL: Amount: {}", newBid.getPrice());
+		} catch (OptimisticLockException e) {
+			LOGGER.error("Optimistic Lock Exception Occurred: {}", e.getLocalizedMessage());
+			if (newBid.getPrice() > getLatestBid(product).getPrice()) {
+				// If unsuccessful bid is greater than previously updated bid, then try again to save
+				save(newBid, newBid.getProduct(), newBid.getUser());
+			}
+		}
+
+
+
 	}
 
 	@Override
