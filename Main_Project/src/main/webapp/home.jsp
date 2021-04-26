@@ -64,7 +64,7 @@
                     </div>
                     <div class="col-1">
                         <div class="bid-button">
-                            <a href="/login" class="btn btn-info">Bid</a>
+                            <a href="/login" class="btn btn-info btn-lg">Bid</a>
                         </div>
                     </div>
                 </div>

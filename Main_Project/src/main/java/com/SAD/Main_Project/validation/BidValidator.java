@@ -24,12 +24,17 @@ public class BidValidator implements Validator {
     public void validate(Object o, Errors errors) {
         Bid bid = (Bid) o;
 
-        //Add validation logics
-        double latestBidPrice = bidService.getLatestBid(bid.getProduct()).getPrice();
+        Bid latestBid = bidService.getLatestBid(bid.getProduct());
 
-        // Reject if Bid amount is less than latest bid amount
-        if (bid.getPrice() <= latestBidPrice) {
-            errors.rejectValue("price", "bid.price.invalid");
+        if (latestBid == null) {
+            if (bid.getPrice() <= bid.getProduct().getPrice()) {
+                errors.rejectValue("price", "bid.price.invalid");
+            }
+        } else {
+            // Reject if Bid amount is less than latest bid amount
+            if (bid.getPrice() <= latestBid.getPrice())  {
+                errors.rejectValue("price", "bid.price.invalid");
+            }
         }
     }
 }
