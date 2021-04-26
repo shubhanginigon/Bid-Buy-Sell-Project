@@ -70,11 +70,14 @@
                         <div class="row">
                             <h4>Latest Bid: ${product.bid.price}</h4>
                         </div>
+                        <c:if test="${user.id != product.user.id}">
+                      
                         <div class="row">
                             <div class="bid-button">
                                 <a href="/bid/${product.productId}" class="btn btn-info btn-lg">Bid Now</a>
                             </div>
                         </div>
+                        </c:if>
                     </div>
                 </div>
             </c:forEach>
