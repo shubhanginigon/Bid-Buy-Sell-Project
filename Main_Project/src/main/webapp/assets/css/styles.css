@@ -58,7 +58,7 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 30%;
+    width: 40%;
 }
 
 .modal-footer {
@@ -78,4 +78,11 @@
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Bid Price input validation */
+
+
+input#bid-price:invalid {
+    border: solid 2px red;
 }

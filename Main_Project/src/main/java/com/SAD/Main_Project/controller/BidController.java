@@ -7,13 +7,16 @@ import com.SAD.Main_Project.model.User;
 import com.SAD.Main_Project.service.BidService;
 import com.SAD.Main_Project.service.ProductService;
 import com.SAD.Main_Project.service.UserService;
+import com.SAD.Main_Project.validation.BidValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.security.Principal;
 
 @Controller
@@ -31,6 +34,9 @@ public class BidController {
     @Autowired
     BidService bidService;
 
+    @Autowired
+    BidValidator bidValidator;
+
     /*************
      * Add Bid
      ************/
@@ -44,32 +50,45 @@ public class BidController {
         model.addAttribute("product", product);
         model.addAttribute("user", user);
 
+        Bid newBid = new Bid();
+        newBid.setProduct(product);
+        newBid.setUser(user);
+
+        model.addAttribute("bid", newBid);
+
         return Page.BID;
     }
 
+    @Transactional
     @PostMapping
     public String placeBid(@RequestParam("product_id") int productId,
                            @ModelAttribute("bid") Bid bid,
+                           BindingResult bindingResult,
                            ModelMap model,
                            Principal principal) {
-//        System.out.println(bid.toString());
-//        LOGGER.info(bid.toString());;
-//        LOGGER.info(bid.getStatus());
+
 
         Product product = productService.findById(productId);
         User user = userService.findByEmail(principal.getName());
 
-        // Build Bid
-        Bid newBid = Bid.builder()
-                .bidId(productId)
-                .product(product)
-                .user(user)
-                .price(bid.getPrice())
-                .status(bid.getStatus())
-                .build();
+        bid.setProduct(product);
+        bidValidator.validate(bid, bindingResult);
 
-        bidService.save(newBid);
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("bid", model.containsKey("bid") ? model.get("bid") : bid);
+            model.addAttribute("product", model.containsKey("product") ? model.get("product") : product);
+            model.addAttribute("user", model.containsKey("user") ? model.get("user") : user);
+            return "redirect:/bid/" + productId;
+        } else {
+            bidService.save(bid, product, user);
+            return "redirect:/";
+        }
 
-        return "redirect:/";
+
     }
+
+//    private String bidFormWith(ModelMap model) {
+//        model.addAttribute("bid", model.containsKey("bid") ? model.get("bid") : new Bid());
+//        return Page
+//    }
 }

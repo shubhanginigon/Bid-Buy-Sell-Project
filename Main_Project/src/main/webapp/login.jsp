@@ -47,14 +47,14 @@
         <div class="illustration"><i class="icon ion-ios-contact"></i></div>
         <spring:bind path="email">
             <div class="form-group">
-                <form:input path="email" class="form-control" type="email" name="email" placeholder="Email" />
+                <form:input path="email" class="form-control" type="email" name="email" placeholder="Email" value="st121334@ait.asia"/>
                 <form:errors class="text-danger small" path="email" />
             </div>
         </spring:bind>
 
         <spring:bind path="password">
             <div class="form-group">
-                <form:input path="password" class="form-control" type="password" name="password" placeholder="Password" />
+                <form:input path="password" class="form-control" type="password" name="password" placeholder="Password" value="ffffffff"/>
                 <form:errors class="text-danger small" path="password" />
             </div>
         </spring:bind>

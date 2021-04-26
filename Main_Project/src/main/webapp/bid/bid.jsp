@@ -1,4 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,18 +59,23 @@
             <div class="modal-header">
               <h5 class="modal-title">Place your Bid</h5>
             </div>
-            <%--                                    <span class="close">&times;</span>--%>
             <div class="modal-body">
               <p>Product ID: ${product.productId}</p>
               <p>Product Name: ${product.name}</p>
               <p>Starting Price: ${product.price}</p>
-              <form action="/bid" method="post" modelAttribute="bid">
+              <form:form action="/bid" method="post" modelAttribute="bid">
                 <div class="form-group">
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text">$</span>
                     </div>
-                    <input type="text" name="price" class="form-control" aria-label="Amount (to the nearest dollar)" required min="${product.price}">
+
+                    <spring:bind path="price">
+                      <form:input path="price" id="bid-price" type="text" name="price" class="form-control" aria-label="Amount (to the nearest dollar)" required="" min="${product.bid.price}" />
+                      <form:errors class="text-danger small" path="price" />
+                    </spring:bind>
+
+
                     <div class="input-group-append">
                       <span class="input-group-text">.00</span>
                     </div>
@@ -78,11 +86,11 @@
                     <input type="submit" class="btn btn-info btn-lg" value="Bid">
                   </div>
                 </div>
-              </form>
+              </form:form>
 
             </div>
             <div class="modal-footer">
-              <p>Last Bid: 12000 &nbsp; Bidder: Shubhi</p>
+              <p>Last Bid: ${product.bid.price} &nbsp; Bidder: ${product.bid.user.name}</p>
             </div>
           </div>
 
