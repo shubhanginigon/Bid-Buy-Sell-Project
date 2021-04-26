@@ -55,6 +55,7 @@
                         <th scope="col">Product Name</th>
                         <th scope="col">Starting Price</th>
                         <th scope="col">Current Bidding Price</th>
+                        <th scope="col">Bid Status</th>
                         <th scope="col" colspan="2">Actions</th>
                     </tr>
                     </thead>
@@ -64,7 +65,8 @@
                             <th scope="row">${product.productId}</th>
                             <td>${product.name}</td>
                             <td>${product.price}</td>
-                            <td>Current Bid Price</td>
+                            <td>${product.bid.price}</td>
+                            <td>${product.bid.status}</td>
                             <td>
                                 <a href="" class="btn btn-primary">Edit</a>
                             </td>

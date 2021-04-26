@@ -63,6 +63,7 @@
 
                     <spring:bind path="price">
                         <div class="form-group">
+                            <form:label path="price">Price:</form:label>
                             <form:input path="price" class="form-control" type="number" name="name" placeholder="Price" />
                             <form:errors class="text-danger small" path="price" />
                             <div class="text-danger small"></div>
@@ -78,12 +79,14 @@
 
                     <spring:bind path="picture">
                         <div class="form-group">
+                            <form:label path="finishDate_">Bid Finish Date:</form:label>
                             <form:input path="picture" class="form-control-file" type="file" name="picture" />
                             <form:errors class="text-danger small" path="picture" />
                         </div>
                     </spring:bind>
                     <spring:bind path="startDate_">
                         <div class="form-group">
+                            <form:label path="startDate_">Bid Start Date:</form:label>
                             <form:input path="startDate_" class="form-control" type="datetime-local" name="startDate_" />
                             <form:errors class="text-danger small" path="startDate_" />
                         </div>
@@ -91,6 +94,7 @@
 
                     <spring:bind path="finishDate_">
                         <div class="form-group">
+                            <form:label path="finishDate_">Bid Finish Date:</form:label>
                             <form:input path="finishDate_" class="form-control" type="datetime-local" name="finishDate_" />
                             <form:errors class="text-danger small" path="finishDate_" />
                         </div>

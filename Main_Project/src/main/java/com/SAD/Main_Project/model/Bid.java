@@ -37,4 +37,7 @@ public class Bid {
 
     private String status;
 
+    @Version
+    private int version;
+
 }
