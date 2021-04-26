@@ -48,5 +48,9 @@ public class BidServiceImpl implements BidService {
 		LOGGER.info("BID DETAILS: {}", newBid);
 		bidRepo.save(newBid);
 	}
-	
+
+	@Override
+	public Bid getLatestBid(Product product) {
+		return product.getBid();
+	}
 }

@@ -9,4 +9,6 @@ public interface BidService {
 	Bid findByBidId(int bid_id);
 	
 	void save(Bid bid, Product product, User user);
+
+	Bid getLatestBid(Product product);
 }
