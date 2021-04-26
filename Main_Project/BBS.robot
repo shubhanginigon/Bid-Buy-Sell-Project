@@ -13,15 +13,24 @@ ${delay}  1
     Maximize Browser Window
     Set Selenium Speed   0.3
 2. Input username and password
-   Input Text  name=email  yountentshering@gmail.com
+   Input Text  name=email  st121775@ait.asia
    Input Text  name=password  12345678
+
 3. Login
    Click Button  name=submit
+
 4. Check page info
+   Click Link    //a[contains(text(),'Add New Product')]
+   Input Text  name=name  Iphone XR
+   Input Text  name=price  5000
+   Input Text  name=description  Perfect in condition and used for 7 months
+   Input Text  name=startDate_  m04-d28-Y2021TH12M08S00a
+   Input Text  name=finishDate_  m04-d29-Y2021TH12M08S00p
    
+
 5. logout
    Click Link    //a[contains(text(),'Log Out')]
-5. close Browser
-   Close Browser
 
+6. close Browser
+   Close Browser
 

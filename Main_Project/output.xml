@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0.1 (Python 3.9.4 on win32)" generated="20210421 21:45:01.157" rpa="false" schemaversion="2">
+<robot generator="Robot 4.0.1 (Python 3.9.4 on win32)" generated="20210427 01:01:12.513" rpa="false" schemaversion="2">
 <suite id="s1" name="BBS" source="C:\Users\Younten Tshering\Desktop\Bid-Buy-Sell-Project\Main_Project\BBS.robot">
 <test id="s1-t1" name="1. Open Website">
 <kw name="Open Browser" library="Selenium2Library">
@@ -7,66 +7,116 @@
 <arg>${Browser}</arg>
 <arg>options=add_experimental_option("excludeSwitches", ["enable-logging"])</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210421 21:45:01.384" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/login'.</msg>
-<status status="PASS" starttime="20210421 21:45:01.383" endtime="20210421 21:45:02.926"/>
+<msg timestamp="20210427 01:01:12.814" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210427 01:01:12.814" endtime="20210427 01:01:14.434"/>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210421 21:45:02.927" endtime="20210421 21:45:03.058"/>
+<status status="PASS" starttime="20210427 01:01:14.434" endtime="20210427 01:01:14.574"/>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <arg>0.3</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20210421 21:45:03.059" endtime="20210421 21:45:03.059"/>
+<status status="PASS" starttime="20210427 01:01:14.579" endtime="20210427 01:01:14.579"/>
 </kw>
-<status status="PASS" starttime="20210421 21:45:01.382" endtime="20210421 21:45:03.060"/>
+<status status="PASS" starttime="20210427 01:01:12.814" endtime="20210427 01:01:14.579"/>
 </test>
 <test id="s1-t2" name="2. Input username and password">
 <kw name="Input Text" library="Selenium2Library">
 <arg>name=email</arg>
-<arg>yountentshering@gmail.com</arg>
+<arg>st121775@ait.asia</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210421 21:45:03.063" level="INFO">Typing text 'yountentshering@gmail.com' into text field 'name=email'.</msg>
-<status status="PASS" starttime="20210421 21:45:03.063" endtime="20210421 21:45:04.089"/>
+<msg timestamp="20210427 01:01:14.579" level="INFO">Typing text 'st121775@ait.asia' into text field 'name=email'.</msg>
+<status status="PASS" starttime="20210427 01:01:14.579" endtime="20210427 01:01:15.614"/>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <arg>name=password</arg>
 <arg>12345678</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210421 21:45:04.091" level="INFO">Typing text '12345678' into text field 'name=password'.</msg>
-<status status="PASS" starttime="20210421 21:45:04.090" endtime="20210421 21:45:05.115"/>
+<msg timestamp="20210427 01:01:15.614" level="INFO">Typing text '12345678' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20210427 01:01:15.614" endtime="20210427 01:01:16.674"/>
 </kw>
-<status status="PASS" starttime="20210421 21:45:03.062" endtime="20210421 21:45:05.116"/>
+<status status="PASS" starttime="20210427 01:01:14.579" endtime="20210427 01:01:16.674"/>
 </test>
 <test id="s1-t3" name="3. Login">
 <kw name="Click Button" library="Selenium2Library">
 <arg>name=submit</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210421 21:45:05.119" level="INFO">Clicking button 'name=submit'.</msg>
-<status status="PASS" starttime="20210421 21:45:05.118" endtime="20210421 21:45:06.929"/>
+<msg timestamp="20210427 01:01:16.679" level="INFO">Clicking button 'name=submit'.</msg>
+<status status="PASS" starttime="20210427 01:01:16.679" endtime="20210427 01:01:18.522"/>
 </kw>
-<status status="PASS" starttime="20210421 21:45:05.118" endtime="20210421 21:45:06.930"/>
+<status status="PASS" starttime="20210427 01:01:16.674" endtime="20210427 01:01:18.524"/>
 </test>
 <test id="s1-t4" name="4. Check page info">
-<status status="FAIL" starttime="20210421 21:45:06.932" endtime="20210421 21:45:06.933">Test case contains no keywords.</status>
+<kw name="Click Link" library="Selenium2Library">
+<arg>//a[contains(text(),'Add New Product')]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210427 01:01:18.524" level="INFO">Clicking link '//a[contains(text(),'Add New Product')]'.</msg>
+<status status="PASS" starttime="20210427 01:01:18.524" endtime="20210427 01:01:19.624"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name=name</arg>
+<arg>Iphone XR</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210427 01:01:19.624" level="INFO">Typing text 'Iphone XR' into text field 'name=name'.</msg>
+<status status="PASS" starttime="20210427 01:01:19.624" endtime="20210427 01:01:20.744"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name=price</arg>
+<arg>5000</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210427 01:01:20.744" level="INFO">Typing text '5000' into text field 'name=price'.</msg>
+<status status="PASS" starttime="20210427 01:01:20.744" endtime="20210427 01:01:21.824"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name=description</arg>
+<arg>Perfect in condition and used for 7 months</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210427 01:01:21.824" level="INFO">Typing text 'Perfect in condition and used for 7 months' into text field 'name=description'.</msg>
+<status status="PASS" starttime="20210427 01:01:21.824" endtime="20210427 01:01:22.904"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name=startDate_</arg>
+<arg>m04-d28-Y2021TH12M08S00a</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210427 01:01:22.904" level="INFO">Typing text 'm04-d28-Y2021TH12M08S00a' into text field 'name=startDate_'.</msg>
+<status status="PASS" starttime="20210427 01:01:22.904" endtime="20210427 01:01:23.898"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name=finishDate_</arg>
+<arg>m04-d29-Y2021TH12M08S00p</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210427 01:01:23.898" level="INFO">Typing text 'm04-d29-Y2021TH12M08S00p' into text field 'name=finishDate_'.</msg>
+<status status="PASS" starttime="20210427 01:01:23.898" endtime="20210427 01:01:24.903"/>
+</kw>
+<status status="PASS" starttime="20210427 01:01:18.524" endtime="20210427 01:01:24.903"/>
 </test>
-<test id="s1-t5" name="5. close Browser">
+<test id="s1-t5" name="5. logout">
+<kw name="Click Link" library="Selenium2Library">
+<arg>//a[contains(text(),'Log Out')]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210427 01:01:24.903" level="INFO">Clicking link '//a[contains(text(),'Log Out')]'.</msg>
+<status status="PASS" starttime="20210427 01:01:24.903" endtime="20210427 01:01:25.954"/>
+</kw>
+<status status="PASS" starttime="20210427 01:01:24.903" endtime="20210427 01:01:25.954"/>
+</test>
+<test id="s1-t6" name="6. close Browser">
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210421 21:45:06.936" endtime="20210421 21:45:09.325"/>
+<status status="PASS" starttime="20210427 01:01:25.954" endtime="20210427 01:01:28.323"/>
 </kw>
-<status status="PASS" starttime="20210421 21:45:06.935" endtime="20210421 21:45:09.326"/>
+<status status="PASS" starttime="20210427 01:01:25.954" endtime="20210427 01:01:28.323"/>
 </test>
-<status status="FAIL" starttime="20210421 21:45:01.159" endtime="20210421 21:45:09.328"/>
+<status status="PASS" starttime="20210427 01:01:12.521" endtime="20210427 01:01:28.323"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="1" skip="0">All Tests</stat>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="4" fail="1" skip="0" id="s1" name="BBS">BBS</stat>
+<stat pass="6" fail="0" skip="0" id="s1" name="BBS">BBS</stat>
 </suite>
 </statistics>
 <errors>
