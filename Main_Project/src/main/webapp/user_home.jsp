@@ -72,10 +72,8 @@
                         </div>
                         <c:if test="${user.id != product.user.id}">
                       
-                        <div class="row">
-                            <div class="bid-button">
-                                <a href="/bid/${product.productId}" class="btn btn-info btn-lg">Bid Now</a>
-                            </div>
+                        <div class="row pt-3">
+                            <a href="/bid/${product.productId}" class="btn btn-info btn-lg">Bid Now</a>
                         </div>
                         </c:if>
                     </div>
