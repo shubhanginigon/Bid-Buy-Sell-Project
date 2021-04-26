@@ -82,7 +82,7 @@
 
             </div>
             <div class="modal-footer">
-              <p>Last Bid: 12000 &nbsp; Bidder: Shubhi</p>
+              <p>Last Bid: ${product.bid.price} &nbsp; Bidder: ${product.bid.user.name}</p>
             </div>
           </div>
 

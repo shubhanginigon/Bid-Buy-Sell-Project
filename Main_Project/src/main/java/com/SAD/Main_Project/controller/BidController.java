@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.security.Principal;
 
 @Controller
@@ -47,6 +48,7 @@ public class BidController {
         return Page.BID;
     }
 
+    @Transactional
     @PostMapping
     public String placeBid(@RequestParam("product_id") int productId,
                            @ModelAttribute("bid") Bid bid,
@@ -59,16 +61,27 @@ public class BidController {
         Product product = productService.findById(productId);
         User user = userService.findByEmail(principal.getName());
 
-        // Build Bid
-        Bid newBid = Bid.builder()
-                .bidId(productId)
-                .product(product)
-                .user(user)
-                .price(bid.getPrice())
-                .status(bid.getStatus())
-                .build();
+        Bid newBid;
 
+        if (product.getBid() == null) {
+            // Build Bid and attach with product
+            newBid = Bid.builder()
+                    .bidId(productId)
+                    .product(product)
+                    .user(user)
+                    .price(bid.getPrice())
+                    .status(bid.getStatus())
+                    .build();
+
+
+        } else {
+            // Build Bid
+            newBid = product.getBid();
+            newBid.setPrice(bid.getPrice());
+            newBid.setUser(user);
+        }
         bidService.save(newBid);
+
 
         return "redirect:/";
     }
