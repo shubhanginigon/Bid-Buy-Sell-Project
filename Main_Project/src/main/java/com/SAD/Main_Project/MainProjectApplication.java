@@ -36,20 +36,21 @@ public class MainProjectApplication {
 		SpringApplication.run(MainProjectApplication.class, args);
 	}
 
-	@Bean
-	public ApplicationRunner initializer(RoleRepo roleRepo) {
-		return args -> roleRepo.saveAll(Arrays.asList(Role.builder().id(1).name("ROLE_ADMIN").build(),
-				Role.builder().id(2).name("ROLE_USER").build()));
-	}
-	
 	@Component
 	public class DbInit{
+		
+		@Bean
+		public ApplicationRunner initializer(RoleRepo roleRepo) {
+			return args -> roleRepo.saveAll(Arrays.asList(Role.builder().id(1).name("ROLE_ADMIN").build(),
+					Role.builder().id(2).name("ROLE_USER").build()));
+		}
+		
 		@PostConstruct
 	    private void postConstruct() {
 			Role adminRole = new Role(1,"ROLE_ADMIN",null);
 			Role role = new Role(2,"ROLE_USER",null);
-			roleRepo.save(role);
 			roleRepo.save(adminRole);
+			roleRepo.save(role);
 			byte[] pic = new byte[10];
 			User user = new User(1,"Default User",Gender.Male,"defaultUser@mailinator.com","$2y$12$2LA4/IzwsfoF.SFtdxwJIus48N6JwFzTdMwlrc9lXRHnA9EOBU7AS",null, true, role, null, null, null);
 			Product product  =new Product(1, "iPhone 11 pro", 12000, "This is an apple product", pic,LocalDateTime.now(), null, LocalDateTime.now(), null, user, null);
