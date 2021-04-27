@@ -55,15 +55,18 @@
                             <img class="product-img" src="assets/img/placeholder_image.jpg" alt="">
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-7">
                         <h3>${product.name}</h3>
                             <p class="text-secondary">${product.description}</p>
                             <p><strong>Starting Price:</strong>${product.price}</p>
                             <p><strong>Bid Start Date:</strong>${product.startDate}</p>
                             <p><strong>Bid End Date:</strong>${product.finishDate}</p>
                     </div>
-                    <div class="col-1">
-                        <div class="bid-button">
+                    <div class="col-2">
+                        <div class="row mt-4">
+                            <h4>Latest Bid: ${product.bid.price}</h4>
+                        </div>
+                        <div class="row">
                             <a href="/login" class="btn btn-info btn-lg">Bid</a>
                         </div>
                     </div>
