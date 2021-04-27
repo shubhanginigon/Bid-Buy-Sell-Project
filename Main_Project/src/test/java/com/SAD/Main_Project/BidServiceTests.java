@@ -50,6 +50,7 @@ public class BidServiceTests {
         return previousVersion;
     }
 
+    @Transactional
     @Test
     void updateBidWithConcurrency() {
         // Similar flow but, another bidder tries to update with same version
@@ -59,7 +60,6 @@ public class BidServiceTests {
 
         // Now we create 'bidder2' which is a concurrent user, and holds
         // the same version number while bidding
-
         Product product = em.find(Product.class, 1);
         User bidder2 = em.find(User.class, 2);
         Assertions.assertEquals("st121334@ait.asia", bidder2.getEmail());
@@ -77,23 +77,28 @@ public class BidServiceTests {
         } catch (ObjectOptimisticLockingFailureException e){
             System.out.println("Exception occurred: " + e.getMessage());
             // This should throw optimistic locking exception
-
             // Its still the previous version
             Assertions.assertNotEquals(latestBid.getVersion(), previousBidVersion);
-
             // For handling this exception, we try to save again in code.
         }
-
         // Test that it is new bidder could not bid on product
         Assertions.assertNotEquals(latestBid.getUser(), product.getBid().getUser());
-
-
     }
 
+    @Transactional
     @Test
     void createScenario() {
 
         // st121334@ait.asia must be the latest Bidder, if not change in DB. or through UI
+        Product product = em.find(Product.class, 1);
+        User bidder2 = em.find(User.class, 2);
+        Assertions.assertEquals("st121334@ait.asia", bidder2.getEmail());
+
+        Bid latestBid = bidRepo.findByBidId(product.getProductId());
+        latestBid.setPrice(latestBid.getPrice() + 5.0);
+        latestBid.setUser(bidder2);
+
+        bidRepo.save(latestBid);
 
         Role role = em.find(Role.class, 2);
         Assertions.assertEquals("ROLE_USER", role.getName());
@@ -104,12 +109,15 @@ public class BidServiceTests {
         User bidder1 = em.find(User.class, 2);
         Assertions.assertEquals("st121334@ait.asia", bidder1.getEmail());
 
-        Product product = em.find(Product.class, 1);
+
         Assertions.assertEquals("iPhone 11 pro", product.getName());
         Assertions.assertEquals(seller.getEmail(), product.getUser().getEmail());
 
         // Bidder 1 has the latest bid
         Assertions.assertEquals(bidder1.getName(), product.getBid().getUser().getName());
+
+
+
     }
 
 }
