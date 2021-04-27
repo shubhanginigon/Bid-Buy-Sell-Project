@@ -5,6 +5,7 @@ import com.SAD.Main_Project.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
 
 import com.SAD.Main_Project.model.Bid;
@@ -54,7 +55,7 @@ public class BidServiceImpl implements BidService {
 		try {
 			bidRepo.save(newBid);
 			LOGGER.info("BID SUCCESSFUL: Amount: {}", newBid.getPrice());
-		} catch (OptimisticLockException e) {
+		} catch (ObjectOptimisticLockingFailureException e) {
 			LOGGER.error("Optimistic Lock Exception Occurred: {}", e.getLocalizedMessage());
 			if (newBid.getPrice() > getLatestBid(product).getPrice()) {
 				// If unsuccessful bid is greater than previously updated bid, then try again to save
